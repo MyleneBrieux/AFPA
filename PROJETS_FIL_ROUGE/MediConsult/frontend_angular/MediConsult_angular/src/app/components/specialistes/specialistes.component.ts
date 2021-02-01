@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { SpecialisteService } from '../../services/specialiste.service';
+import { SpecialisteModele } from '../../modeles/specialiste.modele';
 
 @Component({
   selector: 'app-specialistes',
@@ -7,9 +9,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SpecialistesComponent implements OnInit {
 
-  constructor() { }
+  get:any;
+  nbSpecialistes:number;
+  listeSpecialistes: SpecialisteModele[];
+
+  constructor(private specialisteService: SpecialisteService) { }
 
   ngOnInit(): void {
+    this.specialisteService.searchAllSpecialistes().subscribe((response) => {
+      this.listeSpecialistes = response.body;
+      this.nbSpecialistes = this.listeSpecialistes.length;
+    }, (error) => {
+      console.log(error);
+    });
   }
 
 }

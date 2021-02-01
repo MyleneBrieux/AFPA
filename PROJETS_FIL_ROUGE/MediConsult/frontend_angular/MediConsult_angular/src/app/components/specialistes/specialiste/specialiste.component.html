@@ -1,9 +1,11 @@
-<div class="card" id="card-specialiste" style="width: 18rem;">
-  <div class="card-body">
-    <h5 class="card-title">Docteur<span id="prenom"> Prénom</span><span id="nom"> NOM</span></h5>
-    <h6 class="card-subtitle mb-2 text-muted" id="ville">Ville</h6>
-    <p class="card-text" id="specialite">Spécialité</p>
-    <i class="fas fa-question-circle" id="infos-icon"></i><a href="#" class="card-link" id="lien-infos"> Plus d'informations</a><br>
-    <i class="fas fa-calendar-check" id="rdv-icon"></i><a href="#" class="card-link" id="lien-prendre-rdv"> Prendre rendez-vous</a>
+<div class="col-12" *ngFor="let specialiste of listeSpecialistes">
+  <div class="card" id="card-specialiste">
+    <div class="card-body">
+      <h5 class="card-title">Docteur<span id="prenom"> {{ specialiste.prenom }}</span><span id="nom"> {{ specialiste.nom}}</span></h5>
+      <h6 class="card-subtitle mb-2 text-muted" id="adresse">{{ specialiste.adresse }}</h6>
+      <p class="card-text" id="specialite">{{ specialiste.specialite }}</p>
+      <i class="fas fa-question-circle" id="infos-icon"></i><a href="#" class="card-link" id="lien-infos"> Plus d'informations</a><br>
+      <i class="fas fa-calendar-check" id="rdv-icon"></i><a href="#" class="card-link" id="lien-prendre-rdv"> Prendre rendez-vous</a>
+    </div>
   </div>
 </div>

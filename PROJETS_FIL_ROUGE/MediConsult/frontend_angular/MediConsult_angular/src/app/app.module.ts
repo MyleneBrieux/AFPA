@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-
+import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { ROUTES } from './app.routes';
 
@@ -15,6 +15,8 @@ import { SearchbarComponent } from './components/searchbar/searchbar.component';
 import { SpecialisteComponent } from './components/specialistes/specialiste/specialiste.component';
 import { DetailSpecialisteComponent } from './components/detail-specialiste/detail-specialiste.component';
 
+import { SpecialisteService } from './services/specialiste.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,14 +27,17 @@ import { DetailSpecialisteComponent } from './components/detail-specialiste/deta
     SpecialistesComponent,
     SearchbarComponent,
     SpecialisteComponent,
-    DetailSpecialisteComponent,
+    DetailSpecialisteComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
+    HttpClientModule,
     RouterModule.forRoot(ROUTES)
   ],
-  providers: [],
+  providers: [
+    SpecialisteService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
