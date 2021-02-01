@@ -7,6 +7,7 @@ use App\DTO\SpecialisteDTO;
 use App\Entity\Specialiste;
 use App\Mapper\SpecialisteMapper;
 use App\Mapper\PatientMapper;
+use App\Mapper\RendezVousMapper;
 use App\Repository\SpecialisteRepository;
 use App\Repository\RendezVousRepository;
 use Doctrine\ORM\EntityManagerInterface;
@@ -18,11 +19,15 @@ class SpecialisteService {
     private $repository;
     private $entityManager;
     private $specialisteMapper;
+    private $patientMapper;
+    private $rendezVousMapper;
 
-    public function __construct(SpecialisteRepository $repository, EntityManagerInterface $entityManager, SpecialisteMapper $specialisteMapper){
+    public function __construct(SpecialisteRepository $repository, EntityManagerInterface $entityManager, SpecialisteMapper $specialisteMapper, PatientMapper $patientMapper, RendezVousMapper $rendezVousMapper){
         $this->repository = $repository;
         $this->entityManager = $entityManager;
         $this->specialisteMapper = $specialisteMapper;
+        $this->patientMapper = $patientMapper;
+        $this->rendezVousMapper = $rendezVousMapper;
     }
 
     public function searchAll() {
@@ -49,7 +54,7 @@ class SpecialisteService {
 
     public function persist(Specialiste $specialiste, SpecialisteDTO $specialisteDTO){
         try{
-            $specialiste = $this->specialisteMapper->transformeSpecialisteDtoToSpecialisteEntity($specialisteDto, $specialiste);
+            $specialiste = $this->specialisteMapper->transformeSpecialisteDtoToSpecialisteEntity($specialisteDTO, $specialiste);
             $this->entityManager->persist($specialiste);
             $this->entityManager->flush();
         } catch(DriverException $e){
@@ -88,7 +93,7 @@ class SpecialisteService {
 
     public function searchAllPatientsForOneSpecialiste(int $id){
         try{
-            $specialiste = $this->specialisteRepository->find($id);
+            $specialiste = $this->repository->find($id);
             $rdvs= $specialiste->getRendezVous();
             
             foreach($rdvs as $rdv){
@@ -103,7 +108,7 @@ class SpecialisteService {
 
     public function searchAllRendezVousForOneSpecialiste(int $id){
         try{
-            $specialiste=$this->specialisteRepository->find($id);
+            $specialiste=$this->repository->find($id);
             $rdvs= $specialiste->getRendezVous();
             foreach($rdvs as $rdv){
                $rendezVous[]= $this->rendezVousMapper->transformeRendezVousEntityToRendezVousDto($rdv->getId());

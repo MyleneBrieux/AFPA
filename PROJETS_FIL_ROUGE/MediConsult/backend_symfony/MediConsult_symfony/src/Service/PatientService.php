@@ -26,7 +26,7 @@ class PatientService {
 
     public function searchAllSpecialistesForOnePatient(int $id){
         try{
-            $patient=$this->patientRepository->find($id);
+            $patient=$this->repository->find($id);
             $rdvs= $patient->getRendezVous();
             foreach($rdvs as $rdv){
                $specialistes[]= $this->specialisteMapper->transformeSpecialisteEntityToSpecialisteDto($rdv->getSpecialiste());

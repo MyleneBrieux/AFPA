@@ -2,19 +2,14 @@
 
 namespace App\DTO;
 
+use App\Entity\User;
 use OpenApi\Annotations as OA;
 
 /**
  * @OA\Schema()
  */
-class SpecialisteDTO 
+class SpecialisteDTO extends User
 {
-    /**
-     * @OA\Property(type="integer")
-     *
-     * @var int
-     */
-    private $id;
 
     /**
      * @OA\Property(type="string")
@@ -44,11 +39,6 @@ class SpecialisteDTO
      */
     private $specialite;
 
-
-    public function getId()
-    {
-        return $this->id;
-    }
 
     public function setId($id)
     {
