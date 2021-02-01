@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8"/>
+        
+    <title>Exercice 9</title>
+
+</head>
+
+<body>
+        <div>
+            <p>Quel est ton langage web préféré ?</p>
+            
+            <input type="checkbox" id="html">
+            <label for="html">HTML</label></br>
+            <input type="checkbox" id="css">
+            <label for="css">CSS</label></br>
+            <input type="checkbox" id="php">
+            <label for="php">PHP</label></br>
+            <input type="checkbox" id="javascript">
+            <label for="javascript">Javascript</label>
+        </div></br>
+
+    <button id="btnCocher" type="button">Tout cocher</button>
+    <button id="btnDecocher" type="button">Tout décocher</button>
+
+    <script> 
+    /* Créer 4 éléments input de type checkbox et deux boutons : 
+    le premier permettant de cocher toutes les cases 
+    et le deuxième pour décocher toutes les cases */
+
+    var btnCocher=document.getElementById("btnCocher"); // sélectionner l'élément portant l'id "btnCocher" //
+        btnCocher.addEventListener('click', () => { // création de l'événement sur le btnCocher //
+            var cases = document.getElementsByTagName('input');   // on récupère tous input dans cases //
+                for(var i=0; i<cases.length; i++)     // on les parcourt //
+                    if(cases[i].type == 'checkbox'){     // si on a une checkbox... //
+                        cases[i].checked = true;     // ... on la coche //
+                    }
+                }
+        )
+
+        var btnCocher=document.getElementById("btnDecocher"); // idem avec décocher //
+        btnDecocher.addEventListener('click', () => {
+            var cases = document.getElementsByTagName('input');   
+                for(var i=0; i<cases.length; i++) 
+                    if(cases[i].type == 'checkbox'){ 
+                        cases[i].checked = false;
+                    }
+                }
+        )
+        
+    </script>
+
+
+</body>
+
+</html>

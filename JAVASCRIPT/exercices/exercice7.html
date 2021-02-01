@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8"/>
+        
+    <title>Exercice 7</title>
+
+</head>
+
+<body>
+
+    <button id="btn" type="button">Afficher</button>
+
+    <script> // Créer le DOM suivant en utilisant JS uniquement + boutons "Afficher" et "Masquer" dynamiques //
+
+        // création des fonctions // 
+        // function setElt(parent, tagName, attributes) { // fonction générale //
+        //     var elt = document.createElement(tagName); // création d'une balise //
+        //     var entries = Object.entries(attributes); // attributs des balises //
+        //         for (var [key,value] of entries) { // comme le foreach //
+        //             elt[key] = value; // clé = attribut ; value = valeur de l'attribut //
+        //         }
+        //     parent.appendChild(elt); // insertion //
+        //     return elt;
+        // }
+
+
+
+
+
+
+
+        
+        string = prompt("Saisir une chaîne de caractères :");
+
+        function transform(string){ 
+            for (let i=string.length ; i>=1 ; i--) {
+                for (let j=i ; j>=1 ; j--) {
+                    i-1;
+                }
+            }
+        }
+
+
+
+
+
+
+
+
+
+        function setElt(type){ // fonction qui crée n'importe quel élément //
+            elt = document.createElement(type);
+            return elt;
+        }
+
+        function setStrong(text){ // fonction qui attribue le style 'strong' sur un 'text' donné dans l'appel à la fonction //
+            var strong = setElt("strong");
+            strong.appendChild(text);
+            return strong;
+        }
+
+        function setLink(lien,title){ // fonction qui crée des liens avec ses attributs en arguments //
+            var a = setElt("a");
+            a.href=lien;
+            a.title=title;
+            return a;
+        }
+
+        // création des éléments //
+        var div = setElt("div");
+        div.id = "divTP1"; // attribut un id à la div //
+        div.style.display = "none";
+
+        var strong1 = setStrong(document.createTextNode('World Wide Web Consortium'));
+        var strong2 = setStrong(document.createTextNode('W3C'));
+
+        var a1 = setLink("http://fr.wikipedia.org/wiki/Organisme_de_normalisation","Organisme de normalisation");
+        a1.appendChild(document.createTextNode('organisme de standardisation'));
+
+        var a2 = setLink("http://fr.wikipedia.org/wiki/World_Wide_Web","World Wide Web");
+        a2.appendChild(document.createTextNode('World Wide Web.'));
+
+
+        // on relie le tout //
+        document.body.appendChild(div); // div dans body //
+        div.appendChild(document.createTextNode('Le ')); // éléments dans div //
+        div.appendChild(strong1);
+        div.appendChild(document.createTextNode(', abrégé par le sigle '));
+        div.appendChild(strong2);
+        div.appendChild(document.createTextNode(', est un '));
+        div.appendChild(a1);
+        div.appendChild(document.createTextNode(' à but non-lucratif chargé de promouvoir la compatibilité des technologies du '));
+        div.appendChild(a2);
+
+
+        // création de l'événement avec boutons dynamiques //
+        var btn=document.getElementById("btn"); // sélection de l'élément avec l'id "btn" //
+        btn.addEventListener('click', () => { // création de l'événement sur le "btn" avec fonction //
+            if (div.display !="none"){ // si la div est affichée ... //
+                div.style.display="none"; // ... la faire disparaître .. //
+                btn.innerHTML="Afficher"; // ... et écrire "afficher" sur le bouton //
+            } else {
+                div.style.display="block"; // sinon afficher la div //
+                btn.innerHTML="Masquer"; // et écrire "masquer" sur le bouton //
+            }
+        });
+
+    </script>
+
+</br>
+
+</body>
+
+</html>

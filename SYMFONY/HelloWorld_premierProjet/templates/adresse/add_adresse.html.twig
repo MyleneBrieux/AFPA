@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Ajouter/Modifier une adresse{% endblock %}
+
+{% block body %}
+    <h1 class="text-center"><strong>Ajouter/Modifier une adresse<strong></h1></br>
+
+    <div class="text-center">
+        {{form_start(form,{'method':'POST'})}}
+            {{form_row(form.libelle)}}
+        {{ form_end(form)}}
+
+        <a href="{{ path('index_adresses') }}">
+            <button type="button" class="btn btn-secondary">Retour</button>
+        </a>
+    </div>
+{% endblock %}

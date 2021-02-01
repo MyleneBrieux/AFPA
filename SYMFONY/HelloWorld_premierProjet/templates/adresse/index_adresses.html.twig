@@ -1,0 +1,69 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Adresse{% endblock %}
+
+{% block body %}
+
+        <div class="text-right">
+            <a href="{{ path('app_logout') }}">
+                <button type="button" class="btn btn-secondary">Se déconnecter</button>
+            </a>
+        </div></br>
+
+        <h1 class="text-center"><strong>Liste des adresses</strong></h1></br>
+
+            {% if is_granted('ROLE_ADMIN') %}
+                <div class="text-center">
+                    <a href="{{ path('index_produits') }}">
+                        <button type="button" class="btn btn-success">Voir les produits</button>
+                    </a>
+                    <a href="{{ path('index_categories') }}">
+                        <button type="button" class="btn btn-primary">Voir les catégories</button>
+                    </a>
+                    <a href="{{ path('index_clients') }}">
+                        <button type="button" class="btn btn-warning">Voir les clients</button>
+                    </a>
+                    <a href="{{ path('add_adresse') }}">
+                        <button type="button" class="btn btn-secondary">Ajouter une adresse</button>
+                    </a>
+                </div></br>
+            {% endif %}
+
+        <table class="table table-warning">
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Libellé</th>
+                    <th scope="col">Client associé</th>
+                    <th scope="col">Détails</th>
+                        {% if is_granted('ROLE_ADMIN') %}
+                            <th scope="col">Modifier</th>
+                            <th scope="col">Supprimer</th>
+                        {% endif %}
+                </tr>
+                {% for adresse in adresses %}
+                    <tr>
+                        <td>{{ adresse.id }}</td>
+                        <td>{{ adresse.libelle }}</td>
+                        <td>{{ adresse.client.nom }}</td>
+                        <td>
+                            <a href=" {{ path('detail_adresse', {'id': adresse.id}) }}">
+                                <button type="button" class="btn btn-warning">Détails</button>
+                            </a>
+                        </td>
+                            {% if is_granted('ROLE_ADMIN') %}
+                                <td>
+                                    <a href=" {{ path('edit_adresse', {'id': adresse.id}) }}">
+                                        <button type="button" class="btn btn-primary">Modifier</button>
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href=" {{ path('suppression_adresse', {'id': adresse.id, _csrf_token: csrf_token('delete')}) }}">
+                                        <button type="button" class="btn btn-danger">Supprimer</button>
+                                    </a>
+                                </td>
+                            {% endif %}
+                    </tr>
+                {% endfor %}
+        </table>
+
+{% endblock %}

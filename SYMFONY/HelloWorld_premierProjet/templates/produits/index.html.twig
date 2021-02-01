@@ -1,0 +1,73 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Produits{% endblock %}
+
+{% block body %}
+
+        <div class="text-right">
+            <a href="{{ path('app_logout') }}">
+                <button type="button" class="btn btn-secondary">Se déconnecter</button>
+            </a>
+        </div></br>
+
+        <h1 class="text-center"><strong>Produits en stock</strong></h1></br>
+
+            {% if is_granted('ROLE_ADMIN') %}
+                <div class="text-center">
+                    <a href="{{ path('add_produits') }}">
+                        <button type="button" class="btn btn-success">Ajouter un produit</button>
+                    </a>
+                    <a href="{{ path('index_categories') }}">
+                        <button type="button" class="btn btn-primary">Voir les catégories</button>
+                    </a>
+                    <a href="{{ path('index_clients') }}">
+                        <button type="button" class="btn btn-warning">Voir les clients</button>
+                    </a>
+                    <a href="{{ path('index_adresses') }}">
+                        <button type="button" class="btn btn-secondary">Voir les adresses</button>
+                    </a>
+                </div></br>
+            {% endif %}
+
+        <table class="table table-warning">
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Libellé</th>
+                    <th scope="col">Prix (en euros)</th>
+                    <th scope="col">Couleur</th>
+                    <th scope="col">Catégorie</th>
+                    <th scope="col">Détails</th>
+                        {% if is_granted('ROLE_ADMIN') %}
+                            <th scope="col">Modifier</th>
+                            <th scope="col">Supprimer</th>
+                        {% endif %}
+                </tr>
+                {% for produit in produits %}
+                    <tr>
+                        <td>{{ produit.id }}</td>
+                        <td>{{ produit.libelle }}</td>
+                        <td>{{ produit.prix }}</td>
+                        <td>{{ produit.couleur }}</td>
+                        <td>{{ produit.categorie.designation }}</td>
+                        <td>
+                            <a href=" {{ path('detail_produit', {'id': produit.id}) }}">
+                                <button type="button" class="btn btn-warning">Détails</button>
+                            </a>
+                        </td>
+                            {% if is_granted('ROLE_ADMIN') %}
+                                <td>
+                                    <a href=" {{ path('edit_produit', {'id': produit.id}) }}">
+                                        <button type="button" class="btn btn-primary">Modifier</button>
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href=" {{ path('suppression_produit', {'id': produit.id, _csrf_token: csrf_token('delete')}) }}">
+                                        <button type="button" class="btn btn-danger">Supprimer</button>
+                                    </a>
+                                </td>
+                            {% endif %}
+                    </tr>
+                {% endfor %}
+        </table>
+
+{% endblock %}

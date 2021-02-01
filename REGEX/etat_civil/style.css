@@ -1,0 +1,21 @@
+
+/* TABLEAU */
+table {
+    border: solid black 1px;
+    border-collapse: collapse;
+    text-align:center;
+}
+
+th, td {
+    border:solid black 1px;
+}
+
+.email, .prenom, .nom, .ville, .anneenaissance {
+    width: 20%;
+}
+
+caption {
+    font-size:20px;
+    font-weight: bold;
+    margin-bottom: 10px;;
+}

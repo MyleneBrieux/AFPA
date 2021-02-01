@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Produit{% endblock %}
+
+{% block body %}
+    <h1 class="text-center"><strong>Informations relatives au produit<strong></h1></br>
+
+    <div class="text-center jumbotron">
+        <h1> Libellé : {{ produit.libelle }} </h1>
+        <hr>
+        <p> Prix (en euros) : {{ produit.prix }} </p>
+        <p> Couleur : {{ produit.couleur }} </p>
+        <p> ID : {{ produit.id }} </p>
+        <p> Catégorie : {{ produit.categorie.designation }} </p>
+    </div>
+        
+    <div class="text-center">
+        <a href="{{ path('index_produits') }}">
+            <button type="button" class="btn btn-secondary">Retour</button>
+        </a>
+    </div>
+{% endblock %}

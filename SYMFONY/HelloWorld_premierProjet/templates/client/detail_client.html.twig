@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Client{% endblock %}
+
+{% block body %}
+    <h1 class="text-center"><strong>Informations relatives au client<strong></h1></br>
+
+    <div class="text-center jumbotron">
+        <h1> Nom : {{ client.nom }} </h1>
+        <hr>
+        <p> ID : {{ client.id }} </p>
+        <p> Adresse : {{ client.adresse.libelle }} </p>
+    </div>
+        
+    <div class="text-center">
+        <a href="{{ path('index_clients') }}">
+            <button type="button" class="btn btn-secondary">Retour</button>
+        </a>
+    </div>
+{% endblock %}

@@ -1,0 +1,63 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Commandes{% endblock %}
+
+{% block body %}
+
+    <div class="text-right">
+        <a href="{{ path('app_logout') }}">
+            <button type="button" class="btn btn-secondary">Se déconnecter</button>
+        </a>
+    </div></br>
+
+    <h1 class="text-center"><strong>Suivi des commandes du client n°{{ client.id }} : {{ client.nom }}</strong></h1></br>
+
+    <table class="table table-warning">
+        <tr>
+            <th scope="col">N° commande</th>
+            <th scope="col">Détails de la commande</th>
+            <th scope="col">Ajouter un produit</th>
+            <th scope="col">Modifier la commande</th>
+        </tr>
+        {% for i in 0..client.produits|length-1 %}
+            <tr>
+                <td> {{ client.id }}.{{i}} </td>
+                <td>
+                    <table>
+                        <tr>
+                            <th scope="col">ID</th>
+                            <th scope="col">Libellé</th>
+                            <th scope="col">Prix (en euros)</th>
+                            <th scope="col">Couleur</th>
+                        </tr>
+                        <tr>
+                            <td>{{ client.produits[i].id }}</td>
+                            <td>{{ client.produits[i].libelle }}</td>
+                            <td>{{ client.produits[i].prix }}</td>
+                            <td>{{ client.produits[i].couleur }}</td>
+                        </tr>
+                    </table>
+                </td>
+                {% if is_granted('ROLE_ADMIN') %}
+                    <td>
+                        <a href=" {{ path('edit_client', {'id': client.id}) }}">
+                            <button type="button" class="btn btn-success">Ajouter</button>
+                        </a>
+                    </td>
+                    <td>
+                        <a href=" {{ path('edit_client', {'id': client.id}) }}">
+                            <button type="button" class="btn btn-primary">Modifier</button>
+                        </a>
+                    </td>
+                {% endif %}
+            </tr>
+        {% endfor %}
+    </table>
+
+    <div class="text-center">
+        <a href="{{ path('index_clients') }}">
+            <button type="button" class="btn btn-secondary">Retour</button>
+        </a>
+    </div>
+
+{% endblock %}

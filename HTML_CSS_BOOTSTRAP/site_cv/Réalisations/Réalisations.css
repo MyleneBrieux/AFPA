@@ -1,0 +1,101 @@
+/* GENERAL */
+* {
+    text-align : center;
+  }
+
+body {
+      background-image: url("Images/background.png");
+    }
+
+
+/* EN-TÊTE */
+.photo {
+    position:relative;
+    border-radius:1000px;
+    margin-top:-500px;
+    margin-right:850px;
+       }
+
+@media screen and (max-width: 1050px) {
+    .photo {
+            border-radius:1000px;
+            margin-top: -50px;
+            margin-right: -50px;
+            }                          }
+
+.nom {
+    font-family: 'Alex Brush', cursive;
+    font-style:italic;
+    font-size:100px;
+    block-size:105px;
+    color:#302825;
+    }
+
+@media screen and (max-width: 680px) {
+    .nom {
+        text-align: center;
+        font-size:70px;
+        }                          }
+
+
+/* MENU */
+.menu li {
+        display: inline-block ;
+         }
+    
+.menu a {
+    display: block ;
+    width: 260px ;
+    padding: 16px 0 ;
+    border: 2px solid #453935 ;
+    background-color: #ece6e4 ;
+    color: #453935 ;
+    text-decoration: none ;
+    margin: 10px ;
+    text-align: center ;
+    border-radius: 10px;
+    font-size:18px;
+    font-family:Arial, Helvetica, sans-serif;
+        }
+    
+    .menu a:hover {
+        background-color: #463f32 ;
+        color: #ece6e4 ;
+        border-color:#ece6e4 ;
+                  }
+
+
+/* TITRES */
+h2 {
+    font-family: 'Merienda', cursive;
+    font-size:36px;
+    color:#302825;
+    }
+
+.projet {
+         font-family : Arial, Helvetica, sans-serif;
+         font-size:28px;
+        }
+
+
+/*IMAGES */
+.sitecv {
+         border:4px solid #d8ceca;
+         margin-bottom:50px;
+        }
+
+@media screen and (max-width: 840px) {
+    .sitecv {
+         border:4px solid #d8ceca;
+         margin-bottom:50px;
+         width : 400px;
+         height:200px;
+         }                           }
+
+
+/* TITRE CONTACT */
+h3 {
+    font-family: 'Merienda', cursive;
+    margin-top:80px;
+    color:#302825;
+    }

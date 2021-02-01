@@ -1,0 +1,27 @@
+#card-medecin {
+  background-color:#e7f4fa;
+  border-color:#ceeaf4;
+  margin:2%;
+  text-align:center;
+}
+
+#infos-icon, #rdv-icon {
+  color:#0A7A87;
+}
+
+  #lien-infos:link, #lien-prendre-rdv:link {
+    color:#0A7A87;
+  }
+
+  #lien-infos:visited, #lien-prendre-rdv:visited {
+    color:#0A7A87;
+  }
+
+  #lien-infos:focus, #lien-prendre-rdv:focus {
+    background: none;
+    text-decoration:none;
+  }
+
+  #lien-infos:hover, #lien-prendre-rdv {
+    background: none;
+  }

@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8"/>
+        <title>COOL ADMIN</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" 
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">      
+<link rel="stylesheet" href="style.css">
+<script src="https://kit.fontawesome.com/dc95956ece.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <div class="container-fluid">
+
+        <!-- LOGO COOLADMIN -->
+        <div class="row bg-light">
+            <section class="case1 col-xl-2 col-lg-6 col-md-6 col-sm-6 col-6 bg-light">
+                <a href="#"><img src="Images/logo.png" class="logo"></a>
+            </section>
+
+            <!-- BARRE DE RECHERCHE -->
+            <section class="barrerecherche col-xl-6 col-lg-12 col-md-12 col-sm-12 col-12 bg-light">
+                <div class="form-group mx-sm-3 mb-2 bg-light" style="padding-top:1%">
+                    <form class="form-inline" style="background-color:transparent">
+                        <label for="inputPassword2 col-xl-6 col-lg-12 col-md-12 col-sm-12 col-12" class="sr-only"></label>
+                        <input class="form-control col-12" type="search" style="padding-right:22rem" id="inputPassword2" placeholder="Search for dates & reports...">
+                        <button class="btn btn-outline-success my-7 my-sm-0" type="submit"><i class="fas fa-search"></i></button>
+                    </form>
+                    </div>
+            </section>
+
+            <!-- NOTIFICATIONS -->
+            <section class="notification col-xl-2 col-lg-6 col-md-6 col-sm-6 col-5 case bg-light">
+                <a href="#" class="notification"><i class="notif fas fa-comment-dots fa-2x" style="padding-top: 5%; padding-left: 10%"></i><span class="badge">1</span></a>
+                <a href="#" class="notification"><i class="notif fas fa-envelope fa-2x" style="padding-left:8%"></i><span class="badge">1</span></a>
+                <a href="#" class="notification"><i class="notif fas fa-bell fa-2x" style="padding-left:8%"></i><span class="badge">3</span></a>
+            </section>
+
+            <!-- COMPTE -->
+            <section class="compte col-xl-2 col-lg-6 col-md-6 col-sm-6 col-7 case bg-light" >
+                <a href="#" class="nom" style="margin-left: 20px;color:black"><img src="Images/photo.jpg"></i>&emsp;Mylène Brieux</a>
+        </section>
+        </div>
+    </div>
+
+
+    <!-- MENU VERTICAL -->
+    <div class="row">
+        <div class="menu col-xl-2 col-lg-12 col-md-12 col-sm-12 col-12">
+            <nav class ="menu navbar bg-white">
+                <ul class ="nav navbar-nav">
+                    <li class ="nav-item bg-white">
+                        <a class ="nav-link" href="#dashboard"><i class="icondashboard fas fa-tachometer-alt"></i> Dashboard</a>
+                    </li>
+                    <li class ="nav-item bg-white">
+                        <a class ="nav-link disabled" href="#"><i class="icon far fa-chart-bar"></i> Charts</a>
+                    </li>
+                    <li class ="nav-item bg-white">
+                        <a class ="nav-link disabled" href="#"><i class="icon fas fa-table"></i> Tables</a>
+                    </li>
+                    <li class ="nav-item bg-white">
+                        <a class ="nav-link disabled" href="#"><i class="icon far fa-check-square"></i> Forms</a>
+                    </li>
+                    <li class ="nav-item bg-white">
+                        <a class ="nav-link disabled" href="#"><i class="icon fas fa-calendar-alt"></i> Calendar</a>
+                    </li>
+                    <li class ="nav-item bg-white">
+                        <a class ="nav-link disabled" href="#"><i class="icon fas fa-map-marker-alt"></i> Maps</a>
+                    </li>
+                    <li class ="nav-item bg-white">
+                        <a class ="nav-link disabled" href="#"><i class="icon fas fa-copy"></i> Pages</a>
+                    </li>
+                    <li class ="lastnav-item bg-white">
+                        <a class ="nav-link disabled" href="#"><i class="icon fas fa-tv"></i> UI Elements</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+
+
+        <!-- OVERVIEW ET ADD ITEM -->
+        <div class="titlestats col-10"></br>
+            <div class="row">
+                <section class="overview col-xl-10">
+                    <h2>Overview</h2>
+                </section>
+                <section class="additem col-xl-2">
+                    <button type="button" class="btn btn-outline-primary" style="margin-left:70px">+ ADD ITEM</button>
+                </section>
+            </div>
+
+
+            <!-- PETITES STATISTIQUES -->
+            <!-- MEMBERS ONLINE -->
+            <div class="row">
+                <section class="membersonline col-xl-3 col-lg-6 col-12">
+                    <div class="membersonline card text-white bg-transparent mb-3">
+                        <div class="card1">
+                            <i class="members fas fa-user fa-3x"></i>
+                            <h5 class="card1-title">10368</h5>
+                            <p class="card1-text">members online</p>
+                            <img src="Images/membersonline_graphic.png" class="membersonlinegraphic">
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ITEMS SOLD -->
+                <section class="itemsold col-xl-3 col-lg-6 col-12">
+                    <div class="itemsold card text-white bg-transparent mb-3">
+                        <div class="card2">
+                            <i class="sold fas fa-shopping-cart fa-3x"></i>
+                            <h5 class="card2-title">388,688</h5>
+                            <p class="card2-text">items sold</p>
+                            <img src="Images/itemsold_graphic.png" class="itemsoldgraphic">
+                        </div>
+                    </div>
+                </section>
+
+                <!-- THIS WEEK -->
+                <section class="thisweek col-xl-3 col-lg-6 col-12">
+                    <div class="thisweek card text-white bg-transparent mb-3">
+                        <div class="card3">
+                            <i class="week far fa-calendar-alt fa-3x"></i>
+                            <h5 class="card3-title">1,086</h5>
+                            <p class="card3-text">this week</p>
+                            <img src="Images/thisweek_graphic.png" class="thisweekgraphic">
+                        </div>
+                    </div>
+                </section>
+
+                <!-- TOTAL EARNINGS -->
+                <section class="totalearnings col-xl-3 col-lg-6 col-12">
+                    <div class="totalearnings card text-white bg-transparent mb-3">
+                        <div class="card4">
+                            <i class="earnings fas fa-dollar-sign fa-3x"></i>
+                            <h5 class="card4-title">$1,060,386</h5>
+                            <p class="card4-text">total earnings</p>
+                            <img src="Images/totalearnings_graphic.png" class="totalearningsgraphic">
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+
+            <!-- GRANDES STATISTIQUES -->
+            <!-- RECENT REPORTS -->
+            <div class="row">
+                <section class="recentreport col-xl-6">
+                    <div class="card-img">
+                        <img class="card-img" src="Images/recentreport.png" alt="">
+                    </div>
+                </section>
+
+            <!-- CHAR -->
+                <section class="char col-xl-6">
+                    <div class="card-img2">
+                        <img class="card-img2" src="images/char.png" alt="">
+                    </div>
+                </section>
+            </div></br>
+
+
+            <!-- TABLEAU EARNINGS BY ITEMS -->
+            <div class="row">
+                <section class="tableebi col-xl-8 col-lg-12 col-md-12 col-sm-12 col-12">
+                    <table class="table ebi">
+                        <caption>Earnings by Items</caption>
+                        <tbody>
+                            <tr>
+                                <td scope="col" class="lignetitregauche">Date</td>
+                                <td scope="col" class="lignetitre">Order ID</td>
+                                <td scope="col" class="lignetitre">Name</td>
+                                <td scope="col" class="lignetitre">Price</td>
+                                <td scope="col" class="lignetitre">Quantity</td>
+                                <td scope="col" class="lignetitredroit">Total</td>
+                            </tr>
+                            <tr>
+                                <td scope="row" class="ligneimpairg">2018-09-29 05:57</td>
+                                <td class="ligneimpair">100398</td>
+                                <td class="ligneimpair">iPhone X 64Gb Grey</td>
+                                <td class="ligneimpair">$999.00</td>
+                                <td class="ligneimpair">1</td>
+                                <td class="ligneimpaird">$999.00</td>
+                            </tr>
+                            <tr>
+                                <td scope="row" class="lignepairg">2018-09-28 01:22</td>
+                                <td class="lignepair">100397</td>
+                                <td class="lignepair">Samsung S8 Black</td>
+                                <td class="lignepair">$756.00</td>
+                                <td class="lignepair">1</td>
+                                <td class="lignepaird">$756.00</td>
+                            </tr>
+                            <tr>
+                                <td scope="row" class="ligneimpairg">2018-09-27 02:12</td>
+                                <td class="ligneimpair">100396</td>
+                                <td class="ligneimpair">Game Console Controller</td>
+                                <td class="ligneimpair">$22.00</td>
+                                <td class="ligneimpair">2</td>
+                                <td class="ligneimpaird">$44.00</td>
+                            </tr>
+                            <tr>
+                                <td scope="row" class="lignepairg">2018-09-26 23:06</td>
+                                <td class="lignepair">100395</td>
+                                <td class="lignepair">iPhone X 256Gb Black</td>
+                                <td class="lignepair">$1199.00</td>
+                                <td class="lignepair">1</td>
+                                <td class="lignepaird">$1199.00</td>
+                            </tr>
+                            <tr>
+                                <td scope="row" class="ligneimpairg">2018-09-25 19:03</td>
+                                <td class="ligneimpair">100393</td>
+                                <td class="ligneimpair">USB 3.0 Cable</td>
+                                <td class="ligneimpair">$10.00</td>
+                                <td class="ligneimpair">3</td>
+                                <td class="ligneimpaird">$30.00</td>
+                            </tr>
+                            <tr>
+                                <td scope="row" class="lignepairg">2018-09-29 05:57</td>
+                                <td class="lignepair">100392</td>
+                                <td class="lignepair">Smartwatch 4.0 LTE Wifi</td>
+                                <td class="lignepair">$199.00</td>
+                                <td class="lignepair">6</td>
+                                <td class="lignepaird">$1494.00</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+
+
+                <!-- TABLEAU TOP COUNTRIES -->
+                <section class="tabletc col-xl-4 col-lg-12 col-md-12 col-sm-12 col-12">
+                    <table class="table topcountries table-striped">
+                        <caption>Top Countries</caption>
+                        <tbody>
+                            <tr>
+                                <td scope="row" class="paysUS">United States</td>
+                                <td class="paysUS2">$1,119,368,96</td>
+                            </tr>
+                            <tr>
+                                <td scope="row" class="pays">Australia</td>
+                                <td class="pays">$70,261,65</td>
+                            </tr>
+                            <tr>
+                                <td scope="row" class="pays">United Kingdom</td>
+                                <td class="pays">$46,399,22</td>
+                            </tr>
+                            <tr>
+                                <td scope="row" class="pays">Turkey</td>
+                                <td class="pays">$35,364,90</td>
+                            </tr>
+                            <tr>
+                                <td scope="row" class="pays">Germany</td>
+                                <td class="pays">$30,366,96</td>
+                            </tr>
+                            <tr>
+                                <td scope="row" class="pays">France</td>
+                                <td class="pays">$10,366,96</td>
+                            </tr>
+                            <tr>
+                                <td scope="row" class="pays">Australia</td>
+                                <td class="pays">$5,366,96</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+
+            </div>
+    </div>
+
+</body>
+
+</html>

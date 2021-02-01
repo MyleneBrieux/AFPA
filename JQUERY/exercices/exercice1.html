@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+
+<html>
+
+	<head>
+		<meta charset=utf-8 />
+        <title>Exercice 1</title>
+        <script src="jquery-3.5.1.min.js"></script>
+    </head> 
+
+	<body>
+
+		<p id ='text'>Exercices JQuery</p> 
+		<div>
+			<button id="jsstyle">Style it !</button>
+        </div>
+
+            <script> // Modifiez le style du paragraphe suivant en utilisant JQUERY //
+
+                var p = $( "#text" );
+                $( "button" ).on( "click", function( event ) {
+                    p.css('color','red');
+                });
+
+                // EN JAVASCRIPT
+                // var btn=document.getElementById("jsstyle"); 
+                // btn.addEventListener('click', () => { 
+                //     p=document.getElementById("text");
+                //     p.style="color:red";
+                // });
+            
+            </script>
+        
+    </body>
+    
+</html>

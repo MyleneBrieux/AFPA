@@ -1,0 +1,17 @@
+# all_produits:
+#      path: /produits
+#      controller: App\Controller\ProduitController::produits
+
+# detail_produit:
+#      path: /produits/detail/{id}
+#      controller: App\Controller\ProduitController::produit
+
+# ajout_produit:
+#      path: /produits/ajout
+#      controller: App\Controller\ProduitController::ajout
+
+# modifier_produit:
+#      path: /produits/modifier/{id}
+#      controller: App\Controller\ProduitController::modifier
+# requirements :
+#   nul : "\d+"

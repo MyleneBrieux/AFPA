@@ -1,0 +1,18 @@
+* {
+  /* background-image:url(../../assets/img/logo.png); */
+}
+
+.welcome-message {
+  color:#0A7A87;
+  text-align:center;
+  margin-top:1%;
+}
+
+#btn-connexion {
+  margin-top:3.5%;
+}
+
+#btn-inscription {
+  margin-top:2%;
+  margin-bottom:4%;
+}

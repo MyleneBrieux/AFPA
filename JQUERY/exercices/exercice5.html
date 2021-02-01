@@ -1,0 +1,39 @@
+<!DOCTYPE html> 
+
+<html> 
+
+	<head> 
+		<meta charset=utf-8 /> 
+        <title>Exercice 5</title> 
+        <script src="jquery-3.5.1.min.js"></script>
+    </head>
+    
+	<body> 
+
+        <form> <!-- par défaut fera un "get" et donc rechargera la page SINON gérer avec événement submit et e.preventDefault() -->
+			<select id="colorSelect" name="color">
+				<option>Red</option>
+				<option>Green</option>
+				<option>White</option>
+				<option>Black</option>
+			</select>
+			<input id="remove-btn" type="button" value="Select and Remove">
+		</form>
+
+        <script>
+        /* Ecrire un script jquery permettant d'afficher et compter les éléments de la liste déroulante ci-dessus.
+           Ecrire un script Jquery permettant la suppression des éléments de la liste déroulante */
+		
+		let numberOfOptions = $('#colorSelect option').length;
+		console.log(numberOfOptions);
+
+
+		$( "#remove-btn" ).on( "click", function( event ) {
+			$('#colorSelect option').remove(); // ou si on souhaite supprimer l'option sélectionnée : $(':selected').remove();
+        });
+
+        </script>
+        
+    </body>
+    
+</html>

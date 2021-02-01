@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8">
+    <title>Exercice 2</title>
+    <script src="jquery-3.5.1.min.js"></script>
+</head>
+
+<body>
+
+    <form>
+        <label for="question-select">Comment vas-tu aujourd'hui ?</label>
+        <select id="questionSelect">
+        </select>
+        <input id="add-btn" type="button" value="Afficher des options">
+    </form>
+
+
+    <script>
+
+        $("#add-btn").on("click", function(e){
+            $.ajax(
+                'exercice2_2.html',
+                {
+                    success: function(){
+                        $( "#questionSelect" ).load( "exercice2_1.html" );    
+                    },
+                    error: function(){
+                        window.alert("Erreur !");
+                    }
+                }
+            )  
+        });
+
+    </script>
+
+</body>
+
+</html>

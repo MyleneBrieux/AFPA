@@ -1,0 +1,11 @@
+<div *ngIf="voiture">
+  <h3>Détails de la voiture</h3>
+  <div class="row">
+    <div class="col-6">
+      {{ voiture.marque }}
+    </div>
+    <div class="col-6">
+      {{ voiture.estDemarree ? "Démarrée" : "Arrêtée" }}
+    </div>
+  </div>
+</div>

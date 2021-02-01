@@ -1,0 +1,46 @@
+#connexion {
+  color:#0A7A87;
+  text-align:center;
+  margin-top:1%;
+  margin-bottom:2%;
+}
+
+#form-connexion {
+  text-align:center;
+  margin-left:35%;
+  width:30%;
+}
+
+#input-email {
+  text-align:center;
+  margin-bottom:6%;
+}
+
+#input-mdp {
+  text-align:center;
+  margin-bottom:8.25%;
+}
+
+#sinscrire {
+  text-align:center;
+  margin-top:1%;
+  margin-bottom:3%;
+}
+
+  #lien-inscription:link {
+    color:#0A7A87;
+  }
+
+  #lien-inscription:visited {
+    color:#0A7A87;
+  }
+
+  #lien-inscription:focus {
+    background: none;
+    text-decoration:none;
+  }
+
+  #lien-inscription:hover {
+    background: none;
+    text-decoration:none;
+  }

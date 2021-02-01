@@ -1,0 +1,86 @@
+#inscription {
+  color:#0A7A87;
+  text-align:center;
+  margin-top:1%;
+  margin-bottom:2%;
+}
+
+#form-inscription {
+  text-align:center;
+  margin-left:35%;
+  width:30%;
+}
+
+#input-nom {
+  text-align:center;
+  margin-bottom:6%;
+}
+
+#input-prenom {
+  text-align:center;
+  margin-bottom:6%;
+}
+
+#input-email {
+  text-align:center;
+  margin-bottom:6%;
+}
+
+#input-mdp {
+  text-align:center;
+  margin-bottom:6%;
+}
+
+#input-confirm-mdp {
+  text-align:center;
+  margin-bottom:6%;
+}
+
+#role {
+  margin-bottom:6%;
+}
+
+#cgu {
+  margin-bottom:6%;
+}
+
+  #lien-cgu:link {
+    color:#0A7A87;
+  }
+
+  #lien-cgu:visited {
+    color:#0A7A87;
+  }
+
+  #lien-cgu:focus {
+    background: none;
+    text-decoration:none;
+  }
+
+  #lien-cgu:hover {
+    background: none;
+  }
+
+#seconnecter {
+  text-align:center;
+  margin-top:1%;
+  margin-bottom:3%;
+}
+
+  #lien-connexion:link {
+    color:#0A7A87;
+  }
+
+  #lien-connexion:visited {
+    color:#0A7A87;
+  }
+
+  #lien-connexion:focus {
+    background: none;
+    text-decoration:none;
+  }
+
+  #lien-connexion:hover {
+    background: none;
+    text-decoration:none;
+  }

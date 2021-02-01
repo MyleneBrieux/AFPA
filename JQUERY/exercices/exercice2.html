@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+
+<html>
+
+	<head>
+        <meta charset=utf-8 />
+        <title>Exercice 2</title>
+        <script src="jquery-3.5.1.min.js"></script>
+    </head>
+    
+	<body>
+
+		<p>
+			<a id="ggl" type="text/html" hreflang="fr" rel="nofollow" target="_self" 
+			   href="http://www.google.com/">Google</a>
+		</p>
+        <button id="values-btn">Click here to get  attributes value</button>
+        
+        <script> 
+        /* Depuis le fichier Html ci-dessus, écrire un script en JQuery permettant de récupérer les atributs suivants depuis le lien :
+                - href
+                - hreflang
+                - rel
+                - target
+                - type */
+
+            var lien = $( "#ggl" );
+            var btn = $("values-btn");
+            var paragraphe = $("p");
+            $( "button" ).on( "click", () => {
+                paragraphe.append("</br>");
+                $(paragraphe.append(lien.attr("href"))).append( "</br>" );      
+                $(paragraphe.append(lien.attr("hreflang"))).append( "</br>" );           
+                $(paragraphe.append(lien.attr("rel"))).append( "</br>" );  
+                $(paragraphe.append(lien.attr("target"))).append( "</br>" );  
+                paragraphe.append(lien.attr("type"));
+
+                // console.log("href = " + lien.attr("href"));
+                // console.log("hreflang = " + lien.attr("hreflang"));
+                // console.log("rel = " + lien.attr("rel"));
+                // console.log("target = " + lien.attr("target"));
+                // console.log("type = " + lien.attr("type"));
+            });
+
+        </script>
+
+    </body>
+    
+</html>

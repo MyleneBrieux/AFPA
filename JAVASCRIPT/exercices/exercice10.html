@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8"/>
+        
+    <title>Exercice 10</title>
+
+</head>
+
+<body>
+        <div>
+            <span id="parent" type="inline">Ceci est un span</span>
+                </br>
+            <a href="#" id="parent" type="inline">Ceci est un lien</a>
+                </br>
+            <strong id="parent" type="inline">Ceci est important</strong>
+                </br>
+        </div>
+    
+    </br>
+
+    <button id="btn" type="button">Supprimer les espaces</button>
+
+
+    <script> 
+    /* Créer une page avec plusieurs éléments de type inline (span, a, strong, img...) séparés par des </br>.
+    Ces éléments doivent se trouver dans une div. Utiliser un bouton qui permettra lors du clic
+    de supprimer tous les élements </br>. */
+
+    var btn=document.getElementById("btn"); // sélectionner l'élément portant l'id "btn" //
+        btn.addEventListener('click', () => { // création de l'événement sur le btn //
+            var br = document.getElementsByTagName('br'); // on stocke tous les "br" dans br //
+                for (var i=br.length -1; i>=0; i--) { // on décrémente car si on incrémente, retourne une erreur (le tableau sera modifié) //
+                    br[i].parentNode.removeChild(br[i]); // retire un nœud enfant de l'arbre DOM et retourne le nœud retiré //
+                }
+        })
+        
+    </script>
+
+
+</body>
+
+</html>

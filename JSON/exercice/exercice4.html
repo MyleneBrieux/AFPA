@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8">
+    <title>Exercice 4</title>
+    <script src="jquery-3.5.1.min.js"></script>
+</head>
+
+<body>
+
+    <form>
+        <select id="marque" name="marque">
+            <option value="">-- Sélectionnez une marque --</option>
+            <option value="RENAULT">RENAULT</option>
+            <option value="OPEL">OPEL</option>
+            <option value="FIAT">FIAT</option>
+        </select>
+
+        <select id="modele" name="modele">
+            <option value="">-- Sélectionnez un modèle --</option>
+        </select>
+    </form></br>
+
+    <div> 
+        <table id="table-voitures" border='1'>
+            <thead>
+                <tr>
+                    <th>Marque</th>
+                    <th>Modèle</th>
+                </tr>
+            </thead>
+            <tbody id="tbody">
+
+            </tbody>
+        </table>
+    </div>
+
+
+    <script>
+
+        doGetJson("test.php", false);
+
+        $("#marque").on("change", function(e){ 
+            const marqueSelectionnee = $(":selected").val(); 
+            let url = marqueSelectionnee ? "test.php?marque=" + marqueSelectionnee : "test.php";
+            $("#modele").empty().append($("<option value=''>").html("-- Sélectionnez un modèle --"));
+            doGetJson(url, true);
+        })
+            
+
+        $("#modele").on("change", function(e){ 
+            const modeleSelectionne = $("#modele :selected").val(); 
+            const marqueSelectionnee = $("#marque option:selected").val(); 
+            let url = modeleSelectionne ? "test.php?marque=" + marqueSelectionnee + "&modele=" + modeleSelectionne
+                                        : "test.php?marque=" + marqueSelectionnee;
+            doGetJson(url, false);
+        })
+
+
+        function doGetJson(url, isSelect){
+            $.getJSON(url, function(data){
+                $("#tbody").empty();
+                $.each(data, function(key, value){
+                    if(isSelect){
+                        $("#modele").append($("<option value='" + value.modele + "'>").html(value.modele));
+                    }
+                $("<tr>").append($("<td>").html(value.marque), $("<td>").html(value.modele)).appendTo($("tbody"));
+                })
+            })
+        }
+
+    </script>
+
+</body>
+
+</html>

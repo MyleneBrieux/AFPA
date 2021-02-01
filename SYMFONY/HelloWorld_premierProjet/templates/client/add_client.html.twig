@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Ajouter un client{% endblock %}
+
+{% block body %}
+    <h1 class="text-center"><strong>Ajouter/Modifier un client<strong></h1></br>
+
+    <div class="text-center">
+        {{form_start(form,{'method':'POST'})}}
+            {{form_row(form.nom)}}
+        {{ form_end(form)}}
+
+        <a href="{{ path('index_clients') }}">
+            <button type="button" class="btn btn-secondary">Retour</button>
+        </a>
+    </div>
+{% endblock %}

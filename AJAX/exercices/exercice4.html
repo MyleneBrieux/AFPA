@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8">
+    <title>Exercice 4</title>
+    <script src="jquery-3.5.1.min.js"></script>
+</head>
+
+<body>
+
+    <form>
+        <select id="marque" name="marque">
+            <option value="">-- Sélectionnez une marque --</option>
+            <option value="RENAULT">RENAULT</option>
+            <option value="OPEL">OPEL</option>
+            <option value="FIAT">FIAT</option>
+        </select>
+
+        <select id="modele" name="modele">
+            <option value="">-- Sélectionnez un modèle --</option>
+        </select>
+    </form></br>
+
+    <div> <!-- soit fichier php, inclure fichier test et foreach dans le <tr>, mais filtrage pas pratique -->
+        <table id="table-voitures" border='1'>
+            <thead>
+                <tr>
+                    <th>Marque</th>
+                    <th>Modèle</th>
+                </tr>
+            </thead>
+            <tbody id="tbody">
+
+            </tbody>
+        </table>
+    </div>
+
+
+    <script>
+
+    $("#tbody").load("test.php"); // Quand on charge la page
+
+        $("#marque").on("change", function(e){ // change est mieux sur les select, si click, autant de click que de marques
+            const marqueSelectionnee = $(":selected").val(); // selected = sélectionne la marque sélectionnée
+                if (marqueSelectionnee){ // Quand on sélectionne une marque de voiture
+                    $("#modele").load("test.php?marque=" + marqueSelectionnee); 
+                    $("#tbody").load("test.php?marque=" + marqueSelectionnee + "&afficher=tableau"); 
+                } else { // Quand on ne sélectionne aucune marque de voiture
+                    $("#modele").load("test.php?marque=");
+                    $("#tbody").load("test.php");
+                }
+        })
+
+        $("#modele").on("change", function(e){ 
+            const modeleSelectionne = $("#modele :selected").val(); 
+            const marqueSelectionnee = $("#marque option:selected").val(); 
+                if (modeleSelectionne){
+                    $("#tbody").load("test.php?marque=" + marqueSelectionnee + "&modele=" + modeleSelectionne +  "&afficher=tableau"); 
+                } else {
+                    $("#tbody").load("test.php?marque=" + marqueSelectionnee +  "&afficher=tableau"); 
+                }
+        })
+
+    </script>
+
+</body>
+
+</html>

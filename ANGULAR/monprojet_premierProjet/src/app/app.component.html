@@ -1,0 +1,29 @@
+<div class="container">
+  <div class="row">
+    <!-- <div class="col-6">
+      <app-liste-voitures></app-liste-voitures>
+    </div>
+    <div class="col-6">
+      <app-detail-voiture></app-detail-voiture>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      <p [appHighlight]="color">Passe la souris sur ce texte ! </p>
+    </div>
+    <div>
+      <div class="col-6">
+        <form (ngSubmit)="inscription(subscriptionForm)" #subscriptionForm="ngForm">
+          Username : <input type="text" name ="username" class="form-control" ngModel required #monEmail="ngModel">
+          <p class="help-block texte-rouge" *ngIf="monEmail.invalid && monEmail.touched">Le username doit être saisis !</p>
+          Email : <input type="text" name="email" class="form-control" ngModel required email>
+          <input type="submit" [disabled]="subscriptionForm.invalid" value="valider" class="btn btn-primary">
+        </form>
+      </div> -->
+      <div class="col-12" *ngFor="let praticien of listePraticiens">
+        Nom : {{ praticien.nom }}
+        Specialite : {{ praticien.specialite }}
+      </div>
+    </div>
+  </div>
+<!-- </div> -->

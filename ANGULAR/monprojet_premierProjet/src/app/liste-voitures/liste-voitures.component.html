@@ -1,0 +1,4 @@
+<h1>Mon garage</h1>
+<app-ajouter-voiture></app-ajouter-voiture>
+<hr>
+<app-voiture *ngFor="let voiture of voitures" [laVoiture]="voiture"></app-voiture> <!-- communication parent/enfant avec property binding -->

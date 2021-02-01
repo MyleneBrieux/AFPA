@@ -1,0 +1,75 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Clients{% endblock %}
+
+{% block body %}
+
+        <div class="text-right">
+            <a href="{{ path('app_logout') }}">
+                <button type="button" class="btn btn-secondary">Se déconnecter</button>
+            </a>
+        </div></br>
+
+        <h1 class="text-center"><strong>Liste des clients</strong></h1></br>
+
+            {% if is_granted('ROLE_ADMIN') %}
+                <div class="text-center">
+                    <a href="{{ path('index_produits') }}">
+                        <button type="button" class="btn btn-success">Voir les produits</button>
+                    </a>
+                    <a href="{{ path('index_categories') }}">
+                        <button type="button" class="btn btn-primary">Voir les catégories</button>
+                    </a>
+                    <a href="{{ path('add_client') }}">
+                        <button type="button" class="btn btn-warning">Ajouter un client</button>
+                    </a>
+                    <a href="{{ path('index_adresses') }}">
+                        <button type="button" class="btn btn-secondary">Voir les adresses</button>
+                    </a>
+                </div></br>
+            {% endif %}
+
+        <table class="table table-warning">
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Nom</th>
+                    <th scope="col">Adresse</th>
+                    <th scope="col">Commandes</th>
+                    <th scope="col">Détails</th>
+                        {% if is_granted('ROLE_ADMIN') %}
+                            <th scope="col">Modifier</th>
+                            <th scope="col">Supprimer</th>
+                        {% endif %}
+                </tr>
+                {% for client in clients %}
+                    <tr>
+                        <td>{{ client.id }}</td>
+                        <td>{{ client.nom }}</td>
+                        <td>{{ client.adresse.libelle }}</td>
+                        <td>
+                            <a href=" {{ path('commandes_client', {'id': client.id}) }}">
+                                <button type="button" class="btn btn-success">Commandes</button>
+                            </a>
+                        </td>
+                        <td>
+                            <a href=" {{ path('detail_client', {'id': client.id}) }}">
+                                <button type="button" class="btn btn-warning">Détails</button>
+                            </a>
+                        </td>
+                            {% if is_granted('ROLE_ADMIN') %}
+                                <td>
+                                    <a href=" {{ path('edit_client', {'id': client.id}) }}">
+                                        <button type="button" class="btn btn-primary">Modifier</button>
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href=" {{ path('suppression_client', {'id': client.id, _csrf_token: csrf_token('delete')}) }}">
+                                        <button type="button" class="btn btn-danger">Supprimer</button>
+                                    </a>
+                                </td>
+                            {% endif %}
+                    </tr>
+                {% endfor %}
+        </table>
+
+{% endblock %}

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8"/>
+        
+    <title>Exercice 8</title>
+
+</head>
+
+<body>
+
+    <script> // Créer le DOM suivant en utilisant JS uniquement //
+
+        // création des fonctions // 
+        function setElt(type){ // fonction qui crée n'importe quel élément //
+            elt = document.createElement(type);
+            return elt;
+        }
+
+        function setDiv(ident){ // fonction qui crée des div //
+            var div = setElt("div");
+            id = ident;
+            return div;
+        }
+
+        function setInput(type){ // fonction qui crée des input //
+            var input = setElt("input");
+            type = type;
+            return input;
+        }
+
+
+        // création des éléménts //
+        var div1 = setDiv("divTP2");
+
+        var form = setElt("form");
+        form.enctype = "multipart/form-data"; // attributions //
+        form.method = "post";
+        form.action = "upload.php";
+
+        var fieldset = setElt("fieldset");
+
+        var legend = setElt("legend");
+        legend.appendChild(document.createTextNode("Uploader une image")); // on attribue un texte à legend //
+
+        var div2 = div1.cloneNode();
+        div2.style = "text-align: center"; //attribution //
+
+        var label = setElt("label");
+        label.htmlFor = 'inputUpload'; // attribution //
+        label.appendChild(document.createTextNode("Image à uploader :")); // on attribue un texte à label //
+        
+        var input1 = setInput("file");
+        input1.name="inputUpload";
+        input1.id="inputUpload";
+
+        var br = setElt("br");
+        var dupBr = br.cloneNode();
+
+        var input2 = setInput("submit");
+        input2.value="Envoyer";
+
+
+        // on relie le tout !! ATTENTION : beaucoup de sous-liens !! //
+        document.body.appendChild(div1); // la div1 au body //
+        
+        div1.appendChild(form); // éléments dans div //
+
+        form.appendChild(fieldset);
+
+        fieldset.appendChild(legend);
+        fieldset.appendChild(div2);
+
+        div2.appendChild(label);
+        div2.appendChild(input1);
+        div2.appendChild(br);
+        div2.appendChild(dupBr);
+        div2.appendChild(input2);
+
+    </script>
+
+</body>
+
+</html>

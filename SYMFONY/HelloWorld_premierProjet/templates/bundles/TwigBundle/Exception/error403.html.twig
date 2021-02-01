@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Page interdite{% endblock %}
+
+{% block body %}
+    <div class="class container">
+        <h1>Vous n'avez pas l'autorisation pour accéder à cette page...</h1>
+        <p>Vous pouvez retourner à l'accueil en cliquant sur le bouton suivant : </p>
+        <a href="{{ path('index_produits') }}" class="btn btn-success">Retour à l'accueil</a>
+    </div>
+{% endblock %}

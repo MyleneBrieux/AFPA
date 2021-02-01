@@ -1,0 +1,544 @@
+/* GENERAL */
+* {
+   background-color:lightgrey;
+  }
+
+
+/* LOGO COOLADMIN */
+.case1 {
+       border-right:2px solid #e6eaec; 
+       border-bottom:2px solid #e6eaec; 
+       background-color: #ececec;
+       margin-left:-23px;
+      }
+
+@media screen and (max-width : 1490px) {
+                                        .logo {
+                                                height:54px;
+                                                width: 180px;
+                                               }
+
+                                        .case1 {
+                                                 border-color:none;
+                                               }
+                                       }
+
+@media screen and (max-width : 1182px) {
+                                        .logo {
+                                               height:61px;
+                                               width: 240px;
+                                               border-color:transparent;
+                                               margin-left:450px;
+                                              }
+
+                                        .case1 {
+                                                border-color:transparent;
+                                               }
+                                       }
+
+@media screen and (max-width : 800px) {
+                                       .logo {
+                                              margin-left:100px;
+                                             }
+                                      }                                  
+                                   
+
+.logo {
+       background-color:transparent;
+       padding-top:2%;
+       padding-left:10%;
+      }
+
+
+/* BARRE DE RECHERCHE */
+.btn {
+      background-color: #2e7bd2;
+      border-color:#2e7bd2;
+     }
+    
+.fas {
+      color:white;
+      background-color:transparent;
+      }
+
+
+/* NOTIFICATIONS */
+.notif {
+        color:#acb6b2;
+       }
+
+      .notif:hover {
+                    color: black;
+                   }
+
+.badge {
+        background-color:red;
+        color:white;
+        border-radius:10px;
+        position: absolute;
+        margin-top:1%;
+        margin-left:-3.5%;
+        width:18px;
+        height:18px;
+       }
+
+
+/* COMPTE */
+.nom {
+      font-family: 'Poppins', sans-serif;
+     }
+
+     .nom:hover {
+                 text-decoration:none;
+                }
+
+
+/* MENU VERTICAL */
+.icon {
+       color:grey;
+       background-color:transparent;
+       margin-right:5px;
+      }
+
+.icondashboard {
+       color : #2555d9;
+       margin-right:5px;
+      }
+
+.lastnav-item {
+               padding-bottom:50%;
+}
+
+@media screen and (max-width:982px) {
+                                     .overview {
+                                                margin-left:100px;
+                                                margin-bottom:4px;
+                                               }
+                                    }
+
+@media screen and (max-width:1182px) {
+                                     .menu {
+                                            font-size:20px;
+                                           }
+                                    }
+
+@media screen and (max-width:1182px) {
+                                          .nav-item, .lastnav-item {
+                                                text-align:center;
+                                                 padding-left:100px;
+                                                }
+                                         }
+
+
+/* OVERVIEW */
+@media screen and (max-width:1200px) {
+                                      .overview {
+                                                margin-left:324px;
+                                                margin-bottom:4px;
+                                                margin-top:4px;
+                                                }
+                                     } 
+
+@media screen and (max-width:982px) {
+                                      .overview {
+                                                 margin-left:100px;
+                                                 margin-bottom:4px;
+                                                }
+                                     }
+
+
+/* BOUTON ADD ITEM */
+.btn {
+      color:white;
+     }
+
+@media screen and (max-width:1640px) {
+      .additem {
+                margin-left:-10px;
+                padding-bottom:2px;
+             }
+         } 
+
+@media screen and (max-width:1200px) {
+                                      .additem {
+                                                margin-left:260px;
+                                                margin-bottom:4px;
+                                                margin-top:4px;
+                                                }
+                                     } 
+
+@media screen and (max-width:982px) {
+                                      .additem {
+                                                margin-left:40px;
+                                                margin-bottom:4px;
+                                                margin-top:4px;
+                                               }
+                                     } 
+
+
+
+/* PETITES STATISTIQUES */
+.card {
+      border-color:lightgrey;
+     }
+
+
+/* MEMBERS ONLINE */      
+.card1 {
+       background: rgb(207,40,139);
+       background: linear-gradient(180deg, rgba(207,40,139,1) 0%, rgba(104,40,207,0.7343137938769257) 50%, rgba(17,72,208,1) 80%);
+       border-radius:10px;
+       width: 19rem; 
+       height: 13rem;
+      }
+
+.card1-title {
+            font-family: 'Poppins', sans-serif;
+            font-size: 30px;
+            background-color:transparent;
+            margin-top:12px;
+            margin-left: 75px;
+           }
+
+.card1-text {
+           font-family: 'Poppins', sans-serif;
+           background-color:transparent;
+           margin-top:-10px;
+           margin-left:75px;
+          }
+     
+.members {
+         float:left;
+         margin-left:20px;
+         margin-top:20px;
+        }
+
+.membersonlinegraphic {
+                      margin-left: 4px;
+                      background-color: transparent;
+                     }
+
+
+/* ITEMS SOLD */
+.card2 {
+       background: rgb(37,221,141);
+       background: linear-gradient(180deg, rgba(37,221,141,0.7343137938769257) 0%, rgba(30,131,106,1) 60%);
+       border-radius:10px;
+       width: 19rem; 
+       height: 13rem;
+      } 
+
+.card2-title {
+              font-family: 'Poppins', sans-serif;
+              font-size: 30px;
+              background-color:transparent;
+              margin-top:12px;
+              margin-left: 95px;
+             }
+
+.card2-text {
+             font-family: 'Poppins', sans-serif;
+             background-color:transparent;
+             margin-top:-10px;
+             margin-left:95px;
+            }
+
+.sold {
+      float:left;
+      margin-left:20px;
+      margin-top:20px;
+     }
+
+.itemsoldgraphic {
+                 margin-left: 4px;
+                 background-color: transparent;
+                }
+
+
+/* THIS WEEK */      
+.card3 {
+       background: rgb(255,76,0);
+       background: linear-gradient(180deg, rgba(255,76,0,0.7343137938769257) 0%, rgba(255,0,194,1) 100%); 
+       border-radius:10px;
+       width: 19rem; 
+       height: 13rem;
+     } 
+
+.card3-title {
+              font-family: 'Poppins', sans-serif;
+              font-size: 30px;
+              background-color:transparent;
+              margin-top:12px;
+              margin-left: 85px;
+             }
+
+.card3-text {
+             font-family: 'Poppins', sans-serif;
+             background-color:transparent;
+             margin-top:-10px;
+             margin-left:85px;
+            }
+
+.week {
+      float:left;
+      margin-left:20px;
+      margin-top:20px;
+      background-color: transparent;
+     }
+
+.thisweekgraphic {
+                 margin-left: 4px;
+                 background-color: transparent;
+                }
+
+
+/* TOTAL EARNINGS */ 
+.card4 {
+       background: rgb(255,248,0);
+       background: linear-gradient(180deg, rgba(255,248,0,0.7343137938769257) 0%, rgba(11,172,78,1) 100%);
+       border-radius:10px;
+       width: 19rem; 
+       height: 13rem;
+     } 
+
+.card4-title {
+              font-family: 'Poppins', sans-serif;
+              font-size: 30px;
+              background-color:transparent;
+              margin-top:12px;
+              margin-left: 65px;
+             }
+
+.card4-text {
+             font-family: 'Poppins', sans-serif;
+             background-color:transparent;
+             margin-top:-10px;
+             margin-left:65px;
+            }
+
+.earnings {
+          float:left;
+          margin-left:20px;
+          margin-top:14px;
+         }
+
+.totalearningsgraphic {
+                       margin-left: 4px;
+                       background-color: transparent;
+                      }
+
+
+/* RECENT REPORTS */      
+.card-img {
+          border-radius:10px;
+          height: 29rem;
+          width: 41rem;
+         }
+
+@media screen and (max-width:1650px) {
+                                     .card-img {
+                                                 height:24rem;
+                                                 width: 36rem;}
+                                    }
+
+@media screen and (max-width:1450px) {
+                                      .card-img {
+                                                 height:19rem;
+                                                 width: 31rem;
+                                                }
+                                     }
+
+@media screen and (max-width:1300px) {
+                                      .card-img {
+                                                 height:18rem;
+                                                 width: 30rem;
+                                                }
+                                     }
+
+@media screen and (max-width:1200px) {
+                                      .card-img {
+                                                 height:29rem;
+                                                 width: 41rem;
+                                                }
+                                         }
+                              
+
+@media screen and (max-width:850px) {
+                                     .card-img {
+                                                height:24rem;
+                                                width: 36rem;
+                                               }
+                                    }
+
+@media screen and (max-width:750px) {
+                                     .card-img {
+                                                 height:19rem;
+                                                 width: 31rem;
+                                                 margin-top:1%;
+                                                }
+                                    }
+                              
+@media screen and (max-width:620px) {
+                                    .card-img {
+                                                height:15rem;
+                                                width: 22rem;
+                                                margin-top:1%;
+                                              }
+                                    }
+
+
+/* CHAR */   
+.card-img2 {
+           border-radius:10px;
+           height: 26rem;
+           width: 41rem;
+          }
+
+@media screen and (max-width:1650px) {
+                                     .card-img2 {
+                                                 height:21rem;
+                                                 width: 36rem;}
+                                    }
+                                    
+@media screen and (max-width:1450px) {
+                                      .card-img2 {
+                                                 height:18rem;
+                                                 width: 31rem;
+                                                }
+                                     }
+
+@media screen and (max-width:1300px) {
+                                      .card-img2 {
+                                                  height:17rem;
+                                                  width: 30rem;
+                                                 }
+                                         }
+                              
+@media screen and (max-width:1200px) {
+                                      .card-img2 {
+                                                  height:26rem;
+                                                  width: 41rem;
+                                                  margin-top:1%;
+                                                 }
+                                     }
+
+@media screen and (max-width:850px) {
+                                      .card-img2 {
+                                                  height:21rem;
+                                                  width: 36rem;
+                                                  margin-top:1%;
+                                                 }
+                                    }
+
+@media screen and (max-width:750px) {
+                                     .card-img2 {
+                                                 height:18rem;
+                                                 width: 31rem;
+                                                 margin-top:1%;
+                                                }
+                                    }
+                              
+@media screen and (max-width:620px) {
+                                     .card-img2 {
+                                                 height:15rem;
+                                                 width: 22rem;
+                                                 margin-top:1%;
+                                                }
+                                    }
+
+
+/* TITRES TABLEAUX */
+caption {
+         caption-side:top;
+         font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+         font-size:30px;
+         color:black;
+        }
+
+
+/* TABLEAU EARNINGS BY ITEMS */
+.lignetitre {
+             background-color: #333333;
+             color:white;
+            }
+
+.lignetitregauche {
+                   background-color: #333333;
+                   color:white;
+                   border-top-left-radius: 15px;
+                  }
+
+.lignetitredroit {
+                  background-color: #333333;
+                  color:white;
+                  border-top-right-radius: 15px;
+                 }
+      
+.ligneimpair {
+              background-color:white;
+              color: #7e7e7e; 
+             }
+
+.ligneimpairg {
+               background-color:white;
+               color: #7e7e7e; 
+               border-left:2px solid #cbcbcb;
+              }
+
+
+.ligneimpaird {
+               background-color:white;
+               color: #7e7e7e; 
+               border-right:2px solid #cbcbcb;
+              }
+
+.lignepair {
+            background-color:#dcdcdc;
+            color: #7e7e7e;
+            }
+
+.lignepairg {
+               background-color:#dcdcdc;
+               color: #7e7e7e; 
+               border-left:2px solid #cbcbcb;
+              }
+
+.lignepaird {
+             background-color:#dcdcdc;
+             color: #7e7e7e; 
+             border-right:2px solid #cbcbcb;
+            }
+
+@media screen and (max-width: 700px) {
+                                      .lignetitre, .lignetitregauche, .lignetitredroit {
+                                                                                        font-size:12px;
+                                                                                       }
+                                      .ligneimpair, .ligneimpairg, .ligneimpaird, .lignepair, .lignepairg, .lignepaird {
+                                                                                                                        font-size:8px;
+                                                                                                                        }                          
+                                     }
+
+
+/* TABLEAU TOP COUNTRIES */
+.pays {
+       background-color: #2555d9;
+       color:white;
+       text-align:center;
+       border-bottom:1px solid #5b7fe3;
+      }
+
+.paysUS {
+         background-color: #2555d9;
+         color:white;
+         text-align:center;
+         border-bottom:1px solid #5b7fe3;
+         border-top-left-radius: 15px;  
+        }
+      
+.paysUS2 {
+          background-color: #2555d9;
+          color:white;
+          text-align:center;
+          border-bottom:1px solid #5b7fe3;
+          border-top-right-radius: 15px;  
+         }

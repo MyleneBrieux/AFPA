@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Adresse{% endblock %}
+
+{% block body %}
+    <h1 class="text-center"><strong>Informations relatives à l'adresse<strong></h1></br>
+
+    <div class="text-center jumbotron">
+        <h1> Libellé : {{ adresse.libelle }} </h1>
+        <hr>
+        <p> ID : {{ adresse.id }} </p>
+        <p> Nom du client : {{ adresse.client.nom }} </p>
+    </div>
+        
+    <div class="text-center">
+        <a href="{{ path('index_adresses') }}">
+            <button type="button" class="btn btn-secondary">Retour</button>
+        </a>
+    </div>
+{% endblock %}

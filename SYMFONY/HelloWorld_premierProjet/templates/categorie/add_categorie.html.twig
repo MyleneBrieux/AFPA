@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Ajouter une catégorie{% endblock %}
+
+{% block body %}
+    <h1 class="text-center"><strong>Ajouter/Modifier une catégorie<strong></h1></br>
+
+    <div class="text-center">
+        {{form_start(form,{'method':'POST'})}}
+            {{form_row(form.designation)}}
+        {{ form_end(form)}}
+
+        <a href="{{ path('index_categories') }}">
+            <button type="button" class="btn btn-secondary">Retour</button>
+        </a>
+    </div>
+{% endblock %}
