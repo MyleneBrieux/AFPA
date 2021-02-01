@@ -14,8 +14,14 @@ import { SpecialistesComponent } from './components/specialistes/specialistes.co
 import { SearchbarComponent } from './components/searchbar/searchbar.component';
 import { SpecialisteComponent } from './components/specialistes/specialiste/specialiste.component';
 import { DetailSpecialisteComponent } from './components/detail-specialiste/detail-specialiste.component';
+import { ProfilComponent } from './components/profil/profil.component';
+import { ProfilSpecialisteComponent } from './components/profil/profil-specialiste/profil-specialiste.component';
+import { ProfilPatientComponent } from './components/profil/profil-patient/profil-patient.component';
+import { PatientsComponent } from './components/patients/patients.component';
+import { PatientComponent } from './components/patients/patient/patient.component';
 
 import { SpecialisteService } from './services/specialiste.service';
+
 
 @NgModule({
   declarations: [
@@ -27,7 +33,12 @@ import { SpecialisteService } from './services/specialiste.service';
     SpecialistesComponent,
     SearchbarComponent,
     SpecialisteComponent,
-    DetailSpecialisteComponent
+    DetailSpecialisteComponent,
+    ProfilComponent,
+    ProfilSpecialisteComponent,
+    ProfilPatientComponent,
+    PatientsComponent,
+    PatientComponent
   ],
   imports: [
     BrowserModule,

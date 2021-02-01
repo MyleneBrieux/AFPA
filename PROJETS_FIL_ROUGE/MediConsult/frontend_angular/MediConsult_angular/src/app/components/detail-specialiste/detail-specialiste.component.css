@@ -1,4 +1,17 @@
+.detail-message {
+  color:#0A7A87;
+  text-align:center;
+  margin-top:1%;
+}
+
 #encadre {
   background-color:#e7f4fa;
   border-color:#ceeaf4;
+  margin-top:2%;
+  margin-bottom:2%;
+  text-align:center;
+}
+
+#btnRetour {
+  margin-bottom:3.25%;
 }

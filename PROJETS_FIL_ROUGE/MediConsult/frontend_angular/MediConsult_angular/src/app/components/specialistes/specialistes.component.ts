@@ -9,14 +9,13 @@ import { SpecialisteModele } from '../../modeles/specialiste.modele';
 })
 export class SpecialistesComponent implements OnInit {
 
-  get:any;
   nbSpecialistes:number;
   listeSpecialistes: SpecialisteModele[];
 
   constructor(private specialisteService: SpecialisteService) { }
 
   ngOnInit(): void {
-    this.specialisteService.searchAllSpecialistes().subscribe((response) => {
+    this.specialisteService.getAllSpecialistes().subscribe((response) => {
       this.listeSpecialistes = response.body;
       this.nbSpecialistes = this.listeSpecialistes.length;
     }, (error) => {
