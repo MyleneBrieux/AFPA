@@ -18,13 +18,6 @@ class PatientMapper {
         $patient->setNom($patientDto->getNom());
         $patient->setPrenom($patientDto->getPrenom());
         $patient->setAge($patientDto->getAge());
-        $patient->setEmail($patientDTO->getEmail());
-        $patient->setPassword(
-            $this->passwordEncoder->encodePassword(
-                $patient,
-                $patientDTO->getPassword()
-            )
-        );
         return $patient;
     }
 
@@ -33,8 +26,6 @@ class PatientMapper {
         $patientDto->setNom($patient->getNom());
         $patientDto->setPrenom($patient->getPrenom());
         $patientDto->setAge($patient->getAge());
-        $patientDto->setEmail($patient->getEmail());
-        $patientDto->setPassword($patient->getPassword());
         return $patientDto;
     }
 
