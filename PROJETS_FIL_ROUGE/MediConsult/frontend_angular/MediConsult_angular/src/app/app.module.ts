@@ -5,15 +5,15 @@ import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { ROUTES } from './app.routes';
 
-import { AppComponent } from './app.component';
-import { NavbarComponent } from './navbar/navbar.component';
-import { HomepageComponent } from './homepage/homepage.component';
-import { InscriptionComponent } from './inscription/inscription.component';
-import { ConnexionComponent } from './connexion/connexion.component';
-import { MedecinsComponent } from './medecins/medecins.component';
-import { SearchbarComponent } from './searchbar/searchbar.component';
-import { MedecinComponent } from './medecins/medecin/medecin.component';
-import { DetailMedecinComponent } from './detail-medecin/detail-medecin.component';
+import { AppComponent } from './components/app.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { HomepageComponent } from './components/homepage/homepage.component';
+import { InscriptionComponent } from './components/inscription/inscription.component';
+import { ConnexionComponent } from './components/connexion/connexion.component';
+import { SpecialistesComponent } from './components/specialistes/specialistes.component';
+import { SearchbarComponent } from './components/searchbar/searchbar.component';
+import { SpecialisteComponent } from './components/specialistes/specialiste/specialiste.component';
+import { DetailSpecialisteComponent } from './components/detail-specialiste/detail-specialiste.component';
 
 @NgModule({
   declarations: [
@@ -22,10 +22,10 @@ import { DetailMedecinComponent } from './detail-medecin/detail-medecin.componen
     HomepageComponent,
     InscriptionComponent,
     ConnexionComponent,
-    MedecinsComponent,
+    SpecialistesComponent,
     SearchbarComponent,
-    MedecinComponent,
-    DetailMedecinComponent,
+    SpecialisteComponent,
+    DetailSpecialisteComponent,
   ],
   imports: [
     BrowserModule,
