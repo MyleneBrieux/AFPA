@@ -38,14 +38,7 @@ class SpecialisteDTO extends User
      * @var string
      */
     private $specialite;
-
-
-    public function setId($id)
-    {
-        $this->id = $id;
-        
-        return $this;
-    }
+    
 
     public function getNom()
     {

@@ -7,6 +7,7 @@ use App\DTO\PatientDTO;
 use App\Entity\Patient;
 use App\Mapper\PatientMapper;
 use App\Mapper\SpecialisteMapper;
+use App\Mapper\RendezVousMapper;
 use App\Repository\PatientRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\DBAL\Exception\DriverException;
@@ -17,11 +18,15 @@ class PatientService {
     private $repository;
     private $entityManager;
     private $patientMapper;
+    private $specialisteMapper;
+    private $rendezVousMapper;
 
-    public function __construct(PatientRepository $repository, EntityManagerInterface $entityManager, PatientMapper $patientMapper){
+    public function __construct(PatientRepository $repository, EntityManagerInterface $entityManager, PatientMapper $patientMapper, SpecialisteMapper $specialisteMapper, RendezVousMapper $rendezVousMapper){
         $this->repository = $repository;
         $this->entityManager = $entityManager;
         $this->patientMapper = $patientMapper;
+        $this->specialisteMapper = $specialisteMapper;
+        $this->rendezVousMapper = $rendezVousMapper;
     }
 
     public function searchAllSpecialistesForOnePatient(int $id){
@@ -86,7 +91,7 @@ class PatientService {
 
     public function searchAllRendezVousForOnePatient(int $id){
         try{
-            $patient=$this->patientRepository->find($id);
+            $patient=$this->repository->find($id);
             $rdvs= $patient->getRendezVous();
             foreach($rdvs as $rdv){
                $rendezVous[]= $this->rendezVousMapper->transformeRendezVousEntityToRendezVousDto($rdv->getId());
