@@ -72,19 +72,13 @@ class PatientService {
 
     public function searchByNom(string $nom){
         try {
-            $patients = $this->repository->searchByNom($nom);
-            $patientDtos=[];
-
-            foreach ($patients as $key=>$value){
-                $patient = (new Patient);
-                $patient->setId($patients[$key]->getId($value))
-                          ->setNom($patients[$key]->getNom($value))
-                          ->setPrenom($patients[$key]->getPrenom($value))
-                          ->setAge($patients[$key]->getAge($value));
-                $patientDtos[]=$this->patientMapper->transformePatientEntityToPatientDto($patient);
+            $patients = $this->repository->findBy(["nom" => $nom]);
+            $patientDtos = [];
+            foreach ($patients as $patient) {
+                $patientDtos[] = $this->patientMapper->transformePatientEntityToPatientDto($patient);
             }
             return $patientDtos;
-        } catch(DriverException $e){
+        } catch (DriverException $e) {
             throw new PatientServiceException("Un problème est technique est servenu. Veuilllez réessayer ultérieurement.", $e->getCode());
         }
     }
@@ -94,7 +88,7 @@ class PatientService {
             $patient=$this->repository->find($id);
             $rdvs= $patient->getRendezVous();
             foreach($rdvs as $rdv){
-               $rendezVous[]= $this->rendezVousMapper->transformeRendezVousEntityToRendezVousDto($rdv->getId());
+               $rendezVous[]= $this->rendezVousMapper->transformeRendezVousEntityToRendezVousDto($rdv);
             }
             return $rendezVous;
         }catch(DriverException $e){

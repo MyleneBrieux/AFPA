@@ -33,7 +33,7 @@ class PatientRestController extends AbstractFOSRestController
     private $patientService;
 
     const URI_PATIENT_COLLECTION = "/patients";
-    const URI_PATIENT_INSTANCE = "/patients/{id}";
+    const URI_PATIENT_INSTANCE = "/patients/id/{id}";
     const URI_PATIENT_COLLECTION_SPECIALISTES = "/patients/specialistes/{id}";
     const URI_PATIENT_COLLECTION_NOM = "/patients/{nom}";
     const URI_PATIENT_COLLECTION_RENDEZVOUS = "/patients/rendezvous/{id}";
@@ -97,7 +97,7 @@ class PatientRestController extends AbstractFOSRestController
     /**
      * PERMET A UN PATIENT DE SUPPRIMER SON COMPTE
      * @OA\Delete(
-     *     path="/patients/{id}",
+     *     path="/patients/id/{id}",
      *     tags={"Patient"},
      *     summary="Delete patient by ID",
      *     description="Delete patient by ID",
@@ -173,7 +173,7 @@ class PatientRestController extends AbstractFOSRestController
     /**
      * PERMET A UN PATIENT DE MODIFIER SON PROFIL
      * @OA\Put(
-     *     path="/patients/{id}",
+     *     path="/patients/id/{id}",
      *     tags={"Patient"},
      *     summary="Update a patient",
      *     description="Update a patient",
@@ -220,7 +220,7 @@ class PatientRestController extends AbstractFOSRestController
     /**
      * PERMET D'AFFICHER UN PATIENT EN DETAIL
      * @OA\Get(
-     *     path="/patients/{id}",
+     *     path="/patients/id/{id}",
      *     tags={"Patient"},
      *     summary="Search Patient by id",
      *     description="Search Patient by id",
@@ -356,7 +356,7 @@ class PatientRestController extends AbstractFOSRestController
         }
 
         if($rendezVousDTO !=null){
-            return View :: create($patientDTO, Response::HTTP_OK, ["Content_type" => "application/json"]);
+            return View :: create($rendezVousDTO, Response::HTTP_OK, ["Content_type" => "application/json"]);
         }else{
             return View::create([], Response::HTTP_NOT_FOUND , ["Content-type"   =>  "application/json"]);
         }
