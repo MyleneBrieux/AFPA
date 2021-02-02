@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { ROUTES } from './app.routes';
+import { NgxSpinnerModule } from 'ngx-spinner';
 
 import { AppComponent } from './components/app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
@@ -19,6 +20,7 @@ import { ProfilSpecialisteComponent } from './components/profil/profil-specialis
 import { ProfilPatientComponent } from './components/profil/profil-patient/profil-patient.component';
 import { PatientsComponent } from './components/patients/patients.component';
 import { PatientComponent } from './components/patients/patient/patient.component';
+import { DetailPatientComponent } from './components/detail-patient/detail-patient.component';
 
 import { SpecialisteService } from './services/specialiste.service';
 
@@ -38,13 +40,15 @@ import { SpecialisteService } from './services/specialiste.service';
     ProfilSpecialisteComponent,
     ProfilPatientComponent,
     PatientsComponent,
-    PatientComponent
+    PatientComponent,
+    DetailPatientComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpClientModule,
-    RouterModule.forRoot(ROUTES)
+    RouterModule.forRoot(ROUTES),
+    NgxSpinnerModule
   ],
   providers: [
     SpecialisteService

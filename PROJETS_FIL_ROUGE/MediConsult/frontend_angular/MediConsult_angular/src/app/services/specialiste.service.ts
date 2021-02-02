@@ -7,6 +7,8 @@ import { SpecialisteModele } from '../modeles/specialiste.modele';
 })
 export class SpecialisteService {
 
+  selectSpecialiste = new EventEmitter<any>();
+
   constructor(private http: HttpClient){}
 
   getAllSpecialistes(){
@@ -14,7 +16,11 @@ export class SpecialisteService {
   }
 
   getSpecialisteById(id:number){
-    return this.http.get<SpecialisteModele[]>("http://localhost:8000/specialistes/"+id, {observe: 'response'});
+    return this.http.get<SpecialisteModele[]>("http://localhost:8000/specialistes/id/"+id, {observe: 'response'});
+  }
+
+  emitSelectSpecialisteById(id:number){
+    this.selectSpecialiste.emit(id);
   }
 
 }

@@ -15,4 +15,5 @@ export const ROUTES: Routes = [
   { path:"specialistes/:id", component: DetailSpecialisteComponent },
   { path:"profil", component: ProfilComponent },
   { path:"patients", component: PatientsComponent }
+
 ]
