@@ -61,6 +61,20 @@
     background: none;
   }
 
+#title-cgu{
+    color :#0A7A87;
+    margin-left:2em;
+}
+
+.text-cgu{
+    text-align:justify;
+}
+
+#btn-fermer-cgu{
+    background-color:#0A7A87;
+    border:none;
+}
+
 #seconnecter {
   text-align:center;
   margin-top:1%;

@@ -1,8 +1,8 @@
 <h3 id="connexion">CONNEXION</h3>
 
 <form id="form-connexion" action="">
-  <input type="text" name="email" placeholder="Adresse email" class="form-control" id="input-email" required>
-  <input type="text" name="mdp" placeholder="Mot de passe" class="form-control" id="input-mdp" required>
+  <input type="text" name="email" placeholder="Adresse email" class="form-control" id="input-email" pattern="[0-9a-z.-_]{2,}@[0-9a-z]{2,}.[a-z]{2,3}$" title="xx@xx.xx" required>
+  <input type="password" name="mdp" placeholder="Mot de passe" class="form-control" id="input-mdp" required>
   <input type="submit" value="Valider" class="btn btn-info">
 </form>
 
