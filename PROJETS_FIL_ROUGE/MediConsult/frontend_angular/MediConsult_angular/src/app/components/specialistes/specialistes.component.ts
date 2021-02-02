@@ -11,6 +11,10 @@ import {NgxPaginationModule} from 'ngx-pagination';
 })
 export class SpecialistesComponent implements OnInit {
 
+  page = 1;
+  count = 0;
+  tableSize = 4;
+
   nbSpecialistes:number;
   listeSpecialistes: SpecialisteModele[];
 
@@ -38,6 +42,11 @@ export class SpecialistesComponent implements OnInit {
     }, (error) => {
       console.log(error);
     });
+  }
+
+  onDataChange(event){
+    this.page = event;
+    this.showAllSpecialistes();
   }
 
 }
