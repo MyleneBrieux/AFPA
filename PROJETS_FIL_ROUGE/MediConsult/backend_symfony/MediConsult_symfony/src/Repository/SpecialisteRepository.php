@@ -19,14 +19,14 @@ class SpecialisteRepository extends ServiceEntityRepository
         parent::__construct($registry, Specialiste::class);
     }
 
-    public function searchBySpecialite($value){
-        return $this->createQueryBuilder('p')
-            ->select('p')
-            ->where('p.specialite=:value')
-            ->setParameter('value',$value)
-            ->getQuery()
-            ->getResult();
-    }
+    // public function searchBySpecialite($value){
+    //     return $this->createQueryBuilder('p')
+    //         ->select('p')
+    //         ->where('p.specialite=:value')
+    //         ->setParameter('value',$value)
+    //         ->getQuery()
+    //         ->getResult();
+    // }
 
     // /**
     //  * @return Specialiste[] Returns an array of Specialiste objects

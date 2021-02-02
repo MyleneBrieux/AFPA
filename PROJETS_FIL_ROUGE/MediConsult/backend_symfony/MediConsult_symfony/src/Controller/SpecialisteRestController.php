@@ -35,7 +35,7 @@ class SpecialisteRestController extends AbstractFOSRestController
 
     const URI_SPECIALISTE_COLLECTION = "/specialistes";
     const URI_SPECIALISTE_COLLECTION_SPECIALITE = "/specialistes/{specialite}";
-    const URI_SPECIALISTE_INSTANCE = "/specialistes/{id}";
+    const URI_SPECIALISTE_INSTANCE = "/specialistes/id/{id}";
     const URI_SPECIALISTE_COLLECTION_PATIENTS = "/specialistes/patients/{id}";
     const URI_SPECIALISTE_COLLECTION_RENDEZVOUS = "/specialistes/rendezvous/{id}";
 
@@ -85,7 +85,7 @@ class SpecialisteRestController extends AbstractFOSRestController
     /**
      * SUPPRESSION D'UN SPECIALISTE / SON PROPRE COMPTE
      * @OA\Delete(
-     *     path="/specialistes/{id}",
+     *     path="/specialistes/id/{id}",
      *     tags={"Specialiste"},
      *     summary="Delete specialiste by ID",
      *     description="Delete specialiste by ID",
@@ -161,7 +161,7 @@ class SpecialisteRestController extends AbstractFOSRestController
     /**
      * MODIFICATION D'UN SPECIALISTE / DE SON PROPRE PROFIL
      * @OA\Put(
-     *     path="/specialistes/{id}",
+     *     path="/specialistes/id/{id}",
      *     tags={"Specialiste"},
      *     summary="Update a specialiste",
      *     description="Update a specialiste",
@@ -208,7 +208,7 @@ class SpecialisteRestController extends AbstractFOSRestController
     /**
      * POUR AFFICHER UN SPECIALISTE EN DETAIL
      * @OA\Get(
-     *     path="/specialistes/{id}",
+     *     path="/specialistes/id/{id}",
      *     tags={"Specialiste"},
      *     summary="Search Specialiste by id",
      *     description="Search Specialiste by id",
@@ -219,8 +219,7 @@ class SpecialisteRestController extends AbstractFOSRestController
      *         required=true,
      *         @OA\Schema(
      *             type="integer",
-     *             format="int64",
-     *             minimum=1
+     *             format="int64"
      *         )
      *     ),
      *     @OA\Response(
@@ -393,7 +392,7 @@ class SpecialisteRestController extends AbstractFOSRestController
         }
 
         if($rendezVousDTO !=null){
-            return View :: create($specialisteDTO, Response::HTTP_OK, ["Content_type" => "application/json"]);
+            return View :: create($rendezVousDTO, Response::HTTP_OK, ["Content_type" => "application/json"]);
         }else{
             return View::create([], Response::HTTP_NOT_FOUND , ["Content-type"   =>  "application/json"]);
         }

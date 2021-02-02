@@ -73,20 +73,13 @@ class SpecialisteService {
 
     public function searchBySpecialite(string $specialite){
         try {
-            $specialistes = $this->repository->searchBySpecialite($specialite);
-            $specialisteDtos=[];
-
-            foreach ($specialistes as $key=>$value){
-                $specialiste = (new Specialiste);
-                $specialiste->setId($specialistes[$key]->getId($value))
-                          ->setNom($specialistes[$key]->getNom($value))
-                          ->setPrenom($specialistes[$key]->getPrenom($value))
-                          ->setAdresse($specialistes[$key]->getAdresse($value))
-                          ->setSpecialite($specialistes[$key]->getSpecialite($value));
-                $specialisteDtos[]=$this->specialisteMapper->transformeSpecialisteEntityToSpecialisteDto($specialiste);
+            $specialistes = $this->repository->findBy(["specialite" => $specialite]);
+            $specialisteDtos = [];
+            foreach ($specialistes as $specialiste) {
+                $specialisteDtos[] = $this->specialisteMapper->transformeSpecialisteEntityToSpecialisteDto($specialiste);
             }
             return $specialisteDtos;
-        } catch(DriverException $e){
+        } catch (DriverException $e) {
             throw new SpecialisteServiceException("Un problème est technique est servenu. Veuilllez réessayer ultérieurement.", $e->getCode());
         }
     }
@@ -111,7 +104,7 @@ class SpecialisteService {
             $specialiste=$this->repository->find($id);
             $rdvs= $specialiste->getRendezVous();
             foreach($rdvs as $rdv){
-               $rendezVous[]= $this->rendezVousMapper->transformeRendezVousEntityToRendezVousDto($rdv->getId());
+               $rendezVous[]= $this->rendezVousMapper->transformeRendezVousEntityToRendezVousDto($rdv);
             }
             return $rendezVous;
         }catch(DriverException $e){
