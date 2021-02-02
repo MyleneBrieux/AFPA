@@ -12,6 +12,21 @@
   text-align:center;
 }
 
+#specialite {
+  font-size:2em;
+  color:grey;
+}
+
+#adresse {
+  font-size:1.1em;
+}
+
+#btnRdv {
+  margin-top:0.5%;
+  margin-bottom:-2%;
+}
+
 #btnRetour {
-  margin-bottom:3.25%;
+  margin-bottom:3.15%;
+  opacity:0.5;
 }

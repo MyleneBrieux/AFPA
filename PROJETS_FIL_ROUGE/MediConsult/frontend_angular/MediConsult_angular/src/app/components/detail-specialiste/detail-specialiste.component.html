@@ -1,12 +1,12 @@
-<h3 class="detail-message"><strong>Informations complémentaires</strong></h3>
+<h3 class="detail-message">Informations complémentaires</h3>
 
 <div class="jumbotron" id="encadre">
-  <h2 class="display-4">Docteur<span id="prenom"> {{ specialiste.prenom }}</span><span id="nom"> {{ specialiste.nom }}</span></h2>
+  <h3 class="display-4">Docteur<span id="prenom"> {{ specialiste.prenom }}</span><span id="nom"> {{ specialiste.nom }}</span></h3>
   <p class="lead" id="specialite">{{ specialiste.specialite }}</p>
   <hr class="my-4">
-  <p><span id="adresse">{{ specialiste.adresse }}</span></p>
+  <p><span id="adresse"><u>Adresse</u> : {{ specialiste.adresse }}</span></p>
   <p class="lead">
-    <a class="btn btn-info btn-lg" href="#" role="button">Prendre rendez-vous</a>
+    <a class="btn btn-info btn-lg" id="btnRdv" href="#" role="button">Prendre rendez-vous</a>
   </p>
 </div>
 
