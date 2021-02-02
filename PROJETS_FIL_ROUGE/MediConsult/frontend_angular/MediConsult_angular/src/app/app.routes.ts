@@ -6,6 +6,7 @@ import { SpecialistesComponent } from './components/specialistes/specialistes.co
 import { DetailSpecialisteComponent } from './components/detail-specialiste/detail-specialiste.component';
 import { ProfilComponent } from './components/profil/profil.component';
 import { PatientsComponent } from './components/patients/patients.component';
+import { FormRendezVousComponent } from './components/form-rendez-vous/form-rendez-vous.component';
 
 export const ROUTES: Routes = [
   { path:"", component: HomepageComponent },
@@ -14,6 +15,6 @@ export const ROUTES: Routes = [
   { path:"specialistes", component: SpecialistesComponent },
   { path:"specialistes/:id", component: DetailSpecialisteComponent },
   { path:"profil", component: ProfilComponent },
-  { path:"patients", component: PatientsComponent }
-
+  { path:"patients", component: PatientsComponent },
+  { path:"form_rdv", component: FormRendezVousComponent }
 ]

@@ -24,6 +24,7 @@ import { PatientComponent } from './components/patients/patient/patient.componen
 import { DetailPatientComponent } from './components/detail-patient/detail-patient.component';
 
 import { SpecialisteService } from './services/specialiste.service';
+import { FormRendezVousComponent } from './components/form-rendez-vous/form-rendez-vous.component';
 
 
 @NgModule({
@@ -42,7 +43,8 @@ import { SpecialisteService } from './services/specialiste.service';
     ProfilPatientComponent,
     PatientsComponent,
     PatientComponent,
-    DetailPatientComponent
+    DetailPatientComponent,
+    FormRendezVousComponent
   ],
   imports: [
     BrowserModule,
