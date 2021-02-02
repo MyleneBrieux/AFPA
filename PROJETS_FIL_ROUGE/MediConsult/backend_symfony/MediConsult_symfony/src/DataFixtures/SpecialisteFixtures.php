@@ -72,6 +72,19 @@ class SpecialisteFixtures extends Fixture
                             ));                  
         $manager->persist($specialiste4);
 
+        $specialiste5=new Specialiste();
+        $specialiste5->setNom("LADEUZE");
+        $specialiste5->setPrenom("Aurélie");
+        $specialiste5->setSpecialite("Infirmier");
+        $specialiste5->setAdresse("4 avenue Jussieu 59170 CROIX");           
+        $specialiste5->setEmail("aurelie.ladeuze@gmail.com");
+        $specialiste5->setRoles(["ROLE_USER"]);
+        $specialiste5->setPassword($this->passwordEncoder->encodePassword(
+                                                                    $specialiste5,
+                                                                    'aurelieladeuze'
+                            ));                  
+        $manager->persist($specialiste5);
+
         $manager->flush();
     }
 }
