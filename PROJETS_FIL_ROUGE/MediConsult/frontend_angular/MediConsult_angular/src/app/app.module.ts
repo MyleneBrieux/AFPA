@@ -5,6 +5,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { ROUTES } from './app.routes';
 import { NgxSpinnerModule } from 'ngx-spinner';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 import { AppComponent } from './components/app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
@@ -48,7 +49,8 @@ import { SpecialisteService } from './services/specialiste.service';
     FormsModule,
     HttpClientModule,
     RouterModule.forRoot(ROUTES),
-    NgxSpinnerModule
+    NgxSpinnerModule,
+    NgxPaginationModule
   ],
   providers: [
     SpecialisteService

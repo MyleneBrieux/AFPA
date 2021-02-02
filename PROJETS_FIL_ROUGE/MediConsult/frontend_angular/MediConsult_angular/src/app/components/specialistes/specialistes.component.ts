@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { SpecialisteService } from '../../services/specialiste.service';
 import { SpecialisteModele } from '../../modeles/specialiste.modele';
 import { NgxSpinnerService } from "ngx-spinner";
+import {NgxPaginationModule} from 'ngx-pagination';
 
 @Component({
   selector: 'app-specialistes',
@@ -17,6 +18,7 @@ export class SpecialistesComponent implements OnInit {
 
   ngOnInit(): void {
     this.getNumberOfSpecialistes();
+    this.showAllSpecialistes();
   }
 
   getNumberOfSpecialistes() {
@@ -25,6 +27,14 @@ export class SpecialistesComponent implements OnInit {
       this.listeSpecialistes = response.body;
       this.nbSpecialistes = this.listeSpecialistes.length;
       this.SpinnerService.hide();
+    }, (error) => {
+      console.log(error);
+    });
+  }
+
+  showAllSpecialistes(){
+    this.specialisteService.getAllSpecialistes().subscribe((response) => {
+      this.listeSpecialistes = response.body;
     }, (error) => {
       console.log(error);
     });

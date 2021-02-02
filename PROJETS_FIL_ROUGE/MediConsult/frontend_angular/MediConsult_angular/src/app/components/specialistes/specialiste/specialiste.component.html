@@ -1,10 +1,10 @@
-<div class="col-12" *ngFor="let specialiste of listeSpecialistes">
+<div class="col-12">
   <div class="card" id="card-specialiste">
     <div class="card-body">
-      <h5 class="card-title">Docteur<span id="prenom"> {{ specialiste.prenom }}</span><span id="nom"> {{ specialiste.nom}}</span></h5>
-      <h6 class="card-subtitle mb-2 text-muted" id="adresse">{{ specialiste.adresse }}</h6>
-      <p class="card-text" id="specialite">{{ specialiste.specialite }}</p>
-      <i class="fas fa-question-circle" id="infos-icon"></i><a [routerLink]="['/specialistes', specialiste.id]" class="card-link" id="lien-infos"> Plus d'informations</a><br>
+      <h5 class="card-title">Docteur<span id="prenom"> {{ leSpecialiste.prenom }}</span><span id="nom"> {{ leSpecialiste.nom}}</span></h5>
+      <h6 class="card-subtitle mb-2 text-muted" id="adresse">{{ leSpecialiste.adresse }}</h6>
+      <p class="card-text" id="specialite">{{ leSpecialiste.specialite }}</p>
+      <i class="fas fa-question-circle" id="infos-icon"></i><a [routerLink]="['/specialistes', leSpecialiste.id]" class="card-link" id="lien-infos"> Plus d'informations</a><br>
       <i class="fas fa-calendar-check" id="rdv-icon"></i><a href="#" class="card-link" id="lien-prendre-rdv"> Prendre rendez-vous</a>
     </div>
   </div>
