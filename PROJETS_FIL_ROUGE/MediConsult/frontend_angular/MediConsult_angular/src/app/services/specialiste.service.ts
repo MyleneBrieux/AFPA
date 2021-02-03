@@ -23,4 +23,12 @@ export class SpecialisteService {
     this.selectSpecialiste.emit(id);
   }
 
+  getSpecialisteBySpecialite(specialite: string){
+    return this.http.get<SpecialisteModele[]>("http://localhost:8000/specialistes/"+specialite, {observe: 'response'});
+  }
+
+  getSpecialisteByNom(nom: string){
+    return this.http.get<SpecialisteModele[]>("http://localhost:8000/specialistes/"+nom, {observe: 'response'});
+  }
+
 }

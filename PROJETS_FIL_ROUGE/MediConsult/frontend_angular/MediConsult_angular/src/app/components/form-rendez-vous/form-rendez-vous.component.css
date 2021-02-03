@@ -33,4 +33,10 @@
 
 #btn-valider {
   margin-bottom:6%;
+  font-size:1.25em;
+}
+
+#btnRetour {
+  margin-bottom:3.15%;
+  opacity:0.5;
 }
