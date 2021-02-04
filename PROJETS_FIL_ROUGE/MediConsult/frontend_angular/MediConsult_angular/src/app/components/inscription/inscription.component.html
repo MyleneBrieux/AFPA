@@ -1,26 +1,22 @@
 <h3 id="inscription">INSCRIPTION</h3>
 
-<form id="form-inscription" action="">
-  <input type="text" name="nom" placeholder="Nom" class="form-control" id="input-nom" title="50 caractères maximum" required>
-  <input type="text" name="prenom" placeholder="Prénom" class="form-control" id="input-prenom" title="50 caractères maximum" required>
-  <input type="text" name="email" placeholder="Adresse email" class="form-control" id="input-email" pattern="[0-9a-z.-_]{2,}@[0-9a-z]{2,}.[a-z]{2,3}$" title="xx@xx.xx" required>
-  <input type="password" name="mdp" placeholder="Mot de passe" class="form-control" id="input-mdp" required>
+<div class="form-group" id="select-profil">
+  <select class="form-control" id="profil-user" (change)="getProfilUser($event)">
+    <option disabled selected>Vous êtes un...</option>
+    <option value="patient">Patient</option>
+    <option value="specialiste">Spécialiste</option>
+  </select>
+</div>
+
+<form [hidden]="!getProfil" id="form-inscription" name="form-inscription" (ngSubmit)="inscription()">
+  <input [(ngModel)]="nom" type="text" name="nom" placeholder="Nom" class="form-control" id="input-nom" title="50 caractères maximum" required>
+  <input [(ngModel)]="prenom" type="text" name="prenom" placeholder="Prénom" class="form-control" id="input-prenom" title="50 caractères maximum" required>
+  <input [(ngModel)]="age" [hidden]="getProfil=='specialiste'" type="number" name="age" placeholder="Âge" class="form-control" id="input-age" min=1 required>
+  <input [(ngModel)]="adresse" [hidden]="getProfil=='patient'" type="text" name="adresse" placeholder="Adresse du cabinet" class="form-control" id="input-adresse" required>
+  <input [(ngModel)]="specialite" [hidden]="getProfil=='patient'" type="text" name="specialite" placeholder="Spécialité" class="form-control" id="input-specialite" title="Médecin généraliste, infirmier, ophtalmologue..." required>
+  <input [(ngModel)]="email" type="text" name="email" placeholder="Adresse email" class="form-control" id="input-email" pattern="[0-9a-z.-_]{2,}@[0-9a-z]{2,}.[a-z]{2,3}$" title="xx@xx.xx" required>
+  <input [(ngModel)]="password" type="password" name="mdp" placeholder="Mot de passe" class="form-control" id="input-mdp" required>
   <input type="password" name="confirm-mdp" placeholder="Confirmation du mot de passe" class="form-control" id="input-confirm-mdp" required>
-  <label class="container" id="role">
-    Je suis un...
-    <div class="form-check">
-      <input class="form-check-input" type="radio" name="patient" id="patient">
-      <label class="form-check-label" for="patient">
-        Patient
-      </label>
-    </div>
-    <div class="form-check">
-      <input class="form-check-input" type="radio" name="specialiste" id="specialiste">
-      <label class="form-check-label" for="specialiste">
-        Spécialiste
-      </label>
-    </div>
-  </label>
   <label class="container" id="cgu">
     <input name="input-cgu" type="checkbox" required>
     <span class="checkmark"></span>
@@ -89,7 +85,7 @@
         </div>
     </div>
 </div>
-  <input type="submit" value="Valider" class="btn btn-info">
+  <button class="btn btn-info" type="submit">Valider</button>
 </form>
 
 <p id="seconnecter">
