@@ -22,7 +22,7 @@ export class InscriptionComponent implements OnInit {
   email: string;
   password: string;
 
-  constructor(private patientService : PatientService) { }
+  constructor(private patientService : PatientService, private specialisteService : SpecialisteService) { }
 
   ngOnInit(): void {
   }
@@ -41,6 +41,19 @@ inscription(){
       password: this.password
     }
     this.patientService.addPatient(this.form).subscribe((response)=>{
+      console.log(response);
+    })
+  }
+  if(this.getProfil == "specialiste"){
+    this.form={
+      nom:this.nom,
+      prenom:this.prenom,
+      adresse:this.adresse,
+      specialite:this.specialite,
+      email: this.email,
+      password: this.password
+    }
+    this.specialisteService.addSpecialiste(this.form).subscribe((response)=>{
       console.log(response);
     })
   }

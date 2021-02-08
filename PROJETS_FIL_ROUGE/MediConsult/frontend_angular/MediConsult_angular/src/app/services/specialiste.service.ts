@@ -31,4 +31,8 @@ export class SpecialisteService {
     return this.http.get<SpecialisteModele[]>("http://localhost:8000/specialistes/"+nom, {observe: 'response'});
   }
 
+  addSpecialiste(form: {}){
+    return this.http.post<SpecialisteModele[]>("http://localhost:8000/specialistes", form, {observe: 'response'})
+  }
+
 }
