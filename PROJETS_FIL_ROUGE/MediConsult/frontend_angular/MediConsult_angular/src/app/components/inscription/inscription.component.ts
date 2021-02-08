@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
+import { NgForm } from '@angular/forms';
 import { PatientService } from 'src/app/services/patient.service';
 import { SpecialisteService } from 'src/app/services/specialiste.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-inscription',
@@ -22,7 +24,7 @@ export class InscriptionComponent implements OnInit {
   email: string;
   password: string;
 
-  constructor(private patientService : PatientService, private specialisteService : SpecialisteService) { }
+  constructor(private patientService : PatientService, private specialisteService : SpecialisteService, private router : Router) { }
 
   ngOnInit(): void {
   }
@@ -40,8 +42,9 @@ inscription(){
       email: this.email,
       password: this.password
     }
-    this.patientService.addPatient(this.form).subscribe((response)=>{
-      console.log(response);
+    this.patientService.addPatient(this.form).subscribe(
+      (response)=>{
+        console.log(response);
     })
   }
   if(this.getProfil == "specialiste"){

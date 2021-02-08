@@ -13,54 +13,46 @@
 
 #profil-user {
   text-align:center;
-  margin-bottom:6%;
+  margin-bottom:2%;
+}
+
+input.ng-invalid.ng-touched {
+  border : 1px solid red;
 }
 
 #input-nom {
   text-align:center;
-  margin-bottom:6%;
 }
 
 #input-prenom {
   text-align:center;
-  margin-bottom:6%;
 }
 
 #input-age {
   text-align:center;
-  margin-bottom:6%;
 }
 
 #input-adresse {
   text-align:center;
-  margin-bottom:6%;
 }
 
 #input-specialite {
   text-align:center;
-  margin-bottom:6%;
 }
 
 #input-email {
   text-align:center;
-  margin-bottom:6%;
 }
 
 #input-mdp {
   text-align:center;
-  margin-bottom:6%;
 }
 
 #input-confirm-mdp {
   text-align:center;
-  margin-bottom:6%;
 }
 
 #role {
-  margin-bottom:6%;
-}
-
-#cgu {
   margin-bottom:6%;
 }
 
@@ -93,6 +85,10 @@
 #btn-fermer-cgu{
     background-color:#0A7A87;
     border:none;
+}
+
+#btn-valider {
+  margin-top:4%;
 }
 
 #seconnecter {
