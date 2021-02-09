@@ -4,6 +4,7 @@ import { NgForm } from '@angular/forms';
 import { PatientService } from 'src/app/services/patient.service';
 import { SpecialisteService } from 'src/app/services/specialiste.service';
 import { Router } from '@angular/router';
+import { NgxSpinnerService } from "ngx-spinner";
 
 @Component({
   selector: 'app-inscription',
@@ -24,7 +25,7 @@ export class InscriptionComponent implements OnInit {
   email: string;
   password: string;
 
-  constructor(private patientService : PatientService, private specialisteService : SpecialisteService, private router : Router) { }
+  constructor(private patientService : PatientService, private specialisteService : SpecialisteService, private router : Router, private SpinnerService: NgxSpinnerService) { }
 
   ngOnInit(): void {
   }
@@ -35,6 +36,7 @@ export class InscriptionComponent implements OnInit {
 
 inscription(){
   if(this.getProfil == "patient"){
+    this.SpinnerService.show();
     this.form={
       nom:this.nom,
       prenom:this.prenom,
@@ -43,11 +45,14 @@ inscription(){
       password: this.password
     }
     this.patientService.addPatient(this.form).subscribe(
-      (response)=>{
-        console.log(response);
-    })
+      data => {
+        this.router.navigate(['/specialistes']);
+      }, error => {
+        console.log(error);
+      })
   }
   if(this.getProfil == "specialiste"){
+    this.SpinnerService.show();
     this.form={
       nom:this.nom,
       prenom:this.prenom,
@@ -56,8 +61,11 @@ inscription(){
       email: this.email,
       password: this.password
     }
-    this.specialisteService.addSpecialiste(this.form).subscribe((response)=>{
-      console.log(response);
+    this.specialisteService.addSpecialiste(this.form).subscribe(
+      data => {
+        this.router.navigate(['/patients']);
+    }, error => {
+      console.log(error);
     })
   }
 }
