@@ -22,10 +22,12 @@ input.ng-invalid.ng-touched {
 
 #input-nom {
   text-align:center;
+  text-transform: uppercase;
 }
 
 #input-prenom {
   text-align:center;
+  text-transform: capitalize;
 }
 
 #input-age {

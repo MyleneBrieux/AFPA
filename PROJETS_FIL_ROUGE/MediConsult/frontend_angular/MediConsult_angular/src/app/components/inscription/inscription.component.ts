@@ -15,7 +15,6 @@ export class InscriptionComponent implements OnInit {
 
   getProfil: string;
 
-
   form: {};
   nom: string;
   prenom: string;
@@ -24,6 +23,11 @@ export class InscriptionComponent implements OnInit {
   specialite: string;
   email: string;
   password: string;
+
+  ok: boolean = false ;
+  firstPassword: string;
+  confirmPassword: string;
+  pattern: string | RegExp;
 
   constructor(private patientService : PatientService, private specialisteService : SpecialisteService, private router : Router, private SpinnerService: NgxSpinnerService) { }
 
@@ -67,6 +71,18 @@ inscription(){
     }, error => {
       console.log(error);
     })
+  }
+}
+
+registerPassword(eventEnregistrer){
+  this.firstPassword = (<HTMLInputElement>eventEnregistrer.target).value;
+}
+
+confirmPasswords(eventConfirmer){
+  this.confirmPassword = (<HTMLInputElement>eventConfirmer.target).value;
+  this.ok = false;
+  if(this.confirmPassword===this.firstPassword){
+    this.ok = true;
   }
 }
 
