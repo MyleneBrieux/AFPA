@@ -36,6 +36,7 @@ input.ng-invalid.ng-touched {
 
 #input-adresse {
   text-align:center;
+  text-transform: capitalize;
 }
 
 #input-specialite {

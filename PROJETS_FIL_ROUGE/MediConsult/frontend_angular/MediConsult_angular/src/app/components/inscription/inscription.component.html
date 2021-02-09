@@ -63,11 +63,12 @@
          placeholder="Adresse du cabinet"
          class="form-control"
          id="input-adresse"
+         title="Format : n° / nom de voie / code postal / ville"
          ngModel required
          #inputAdresse="ngModel"
   >
   <span class="help-block text-danger"
-        *ngIf="!inputAdresse.valid && inputAdresse.touched">Vous devez renseigner l'adresse de votre cabinet pour vous inscrire.
+        *ngIf="!inputAdresse.valid && inputAdresse.touched">L'adresse de votre cabinet est obligatoire.
   </span>
 
   <input [(ngModel)]="specialite"
@@ -130,8 +131,8 @@
   <span class="help-block text-danger"
         *ngIf="!inputConfirmPassword.valid && inputConfirmPassword.touched">Veuillez confirmer votre mot de passe.
   </span>
-  <span class="help-block text-danger"
-        [hidden]="ok">Attention ! Les mots de passe sont différents !
+  <span class="help-block text-secondary"
+        [hidden]="ok"><em>Les mots de passe doivent être identiques.</em>
   </span>
   <span class="help-block text-success"
         [hidden]="!ok">Mots de passe identitiques !
@@ -151,7 +152,7 @@
                      id="lien-cgu"
                      data-toggle="modal"
                      data-target="#CGUPopUp">conditions générales d'utilisation
-                  </a>
+                  </a> (obligatoire)
   </label>
   <span class="help-block text-danger"
         *ngIf="!inputCgu.valid && inputCgu.touched">Les conditions générales d'utilisation sont obligatoires.
