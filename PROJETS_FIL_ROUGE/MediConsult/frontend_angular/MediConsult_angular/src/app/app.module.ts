@@ -22,9 +22,11 @@ import { ProfilPatientComponent } from './components/profil/profil-patient/profi
 import { PatientsComponent } from './components/patients/patients.component';
 import { PatientComponent } from './components/patients/patient/patient.component';
 import { DetailPatientComponent } from './components/detail-patient/detail-patient.component';
+import { FormRendezVousComponent } from './components/form-rendez-vous/form-rendez-vous.component';
 
 import { SpecialisteService } from './services/specialiste.service';
-import { FormRendezVousComponent } from './components/form-rendez-vous/form-rendez-vous.component';
+import { PatientService } from './services/patient.service';
+import { CommonService } from './services/common.service';
 
 
 @NgModule({
@@ -55,7 +57,9 @@ import { FormRendezVousComponent } from './components/form-rendez-vous/form-rend
     NgxPaginationModule
   ],
   providers: [
-    SpecialisteService
+    SpecialisteService,
+    PatientService,
+    CommonService
   ],
   bootstrap: [AppComponent]
 })
