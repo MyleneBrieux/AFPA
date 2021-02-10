@@ -29,6 +29,19 @@ class PatientService {
         $this->rendezVousMapper = $rendezVousMapper;
     }
 
+    public function searchAll() {
+        try {
+            $patients = $this->repository->findAll();
+            $patientDTOs = [];
+            foreach ($patients as $patient) {
+                $patientDTOs[] = $this->patientMapper->transformePatientEntityToPatientDto($patient);
+            }
+            return $patientDTOs;
+        } catch (DriverException $e){
+            throw new PatientServiceException("Un problème est technique est servenu. Veuilllez réessayer ultérieurement.", $e->getCode());
+        }
+    }
+
     public function searchAllSpecialistesForOnePatient(int $id){
         try{
             $patient=$this->repository->find($id);
@@ -95,6 +108,19 @@ class PatientService {
             throw new PatientServiceException("Un problème est technique est servenu. Veuilllez réessayer ultérieurement.", $e->getCode());
         }
     } 
+
+    public function searchByEmail(string $email){
+        try {
+            $patients = $this->repository->findBy(["email" => $email]);
+            $patientDtos = [];
+            foreach ($patients as $patient) {
+                $patientDtos[] = $this->patientMapper->transformePatientEntityToPatientDto($patient);
+            }
+            return $patientDtos;
+        } catch (DriverException $e) {
+            throw new PatientServiceException("Un problème est technique est servenu. Veuilllez réessayer ultérieurement.", $e->getCode());
+        }
+    }
 
 }
 

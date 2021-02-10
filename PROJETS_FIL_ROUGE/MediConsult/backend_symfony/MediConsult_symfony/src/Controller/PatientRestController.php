@@ -37,11 +37,49 @@ class PatientRestController extends AbstractFOSRestController
     const URI_PATIENT_COLLECTION_SPECIALISTES = "/patients/specialistes/{id}";
     const URI_PATIENT_COLLECTION_NOM = "/patients/{nom}";
     const URI_PATIENT_COLLECTION_RENDEZVOUS = "/patients/rendezvous/{id}";
+    const URI_PATIENT_COLLECTION_EMAIL = "/patients/{email}";
 
     public function __construct(PatientService $patientService, EntityManagerInterface $entityManager, PatientMapper $patientMapper){
         $this->patientService = $patientService;
         $this->entityManager = $entityManager;
         $this->patientMapper = $patientMapper;
+    }
+
+/**
+     * AFFICHAGE DE TOUS LES PATIENTS
+     * @OA\Get(
+     *     path="/patients",
+     *     tags={"Patient"},
+     *     summary="Returns a list of PatientDTO",
+     *     description="Returns a list of PatientDTO",
+     *     @OA\Response(
+     *         response=200,
+     *         description="Successful operation",
+     *         @OA\JsonContent(ref="#/components/schemas/PatientDTO")    
+     *     ),
+     *      @OA\Response(
+     *         response=404,
+     *         description="If no PatientDTO found",    
+     *     ),
+     *      @OA\Response(
+     *         response=500,
+     *         description="Internal server Error. Please contact us",    
+     *     )
+     * )
+     * @Get(PatientRestController::URI_PATIENT_COLLECTION)
+     */
+    public function searchAll()
+    {
+        try {
+            $patients = $this->patientService->searchAll();
+        } catch (PatientServiceException $e) {
+            return View::create($e->getMessage(), Response::HTTP_INTERNAL_SERVER_ERROR, ["Content-type" => "application/json"]);
+        }
+        if($patients){
+            return View::create($patients, Response::HTTP_OK, ["Content-type" => "application/json"]);
+        } else {
+            return View::create($patients, Response::HTTP_NOT_FOUND, ["Content-type" => "application/json"]);
+        }
     }
 
     /**
@@ -361,6 +399,53 @@ class PatientRestController extends AbstractFOSRestController
             return View::create([], Response::HTTP_NOT_FOUND , ["Content-type"   =>  "application/json"]);
         }
         
+    }
+
+    /**
+     * PERMET DE RECHERCHER DES PATIENTS VIA ADRESSE EMAIL
+     * @OA\Get(
+     *     path="/patients/{email}",
+     *     tags={"Patient"},
+     *     summary="Search Patient by email adress",
+     *     description="Search Patient by email adress",
+     *     @OA\Parameter(
+     *         name="email",
+     *         in="path",
+     *         description="Email adress of patient that needs to be fetched",
+     *         required=true,
+     *         @OA\Schema(
+     *             type="string"
+     *         )
+     *     ),
+     *     @OA\Response(
+     *         response=200,
+     *         description="Successful operation",
+     *         @OA\JsonContent(ref="#/components/schemas/PatientDTO")
+     *     ),
+     *     @OA\Response(
+     *         response=400,
+     *         description="Invalid email supplied"
+     *     ),
+     *     @OA\Response(
+     *         response=404,
+     *         description="Patient not found"
+     *     )
+     * )
+     * @Get(PatientRestController::URI_PATIENT_COLLECTION_EMAIL)
+     *
+     * @return void
+     */
+    public function searchByEmail(string $email){
+        try {
+            $patientDto = $this->patientService->searchByEmail($email);
+        }catch (PatientServiceException $e){
+            return View::create($e->getMessage(), Response::HTTP_INTERNAL_SERVER_ERROR, ["Content-type" => "application/json"]);
+        }
+        if($patientDto){
+            return View::create($patientDto, Response::HTTP_OK, ["Content-type" => "application/json"]);
+        } else {
+            return View::create([], Response::HTTP_NOT_FOUND, ["Content-type" => "application/json"]);
+        }
     }
 
 
