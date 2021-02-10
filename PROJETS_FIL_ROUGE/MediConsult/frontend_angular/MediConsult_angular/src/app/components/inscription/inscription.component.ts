@@ -54,7 +54,8 @@ export class InscriptionComponent implements OnInit {
       }
       this.patientService.addPatient(this.form).subscribe(
         data => {
-          this.router.navigate(['/specialistes']);
+          this.router.navigate(['/connexion']);
+          this.SpinnerService.hide();
         }, error => {
           console.log(error);
         })
@@ -71,7 +72,8 @@ export class InscriptionComponent implements OnInit {
       }
       this.specialisteService.addSpecialiste(this.form).subscribe(
         data => {
-          this.router.navigate(['/patients']);
+          this.router.navigate(['/connexion']);
+          this.SpinnerService.hide();
       }, error => {
         console.log(error);
       })
