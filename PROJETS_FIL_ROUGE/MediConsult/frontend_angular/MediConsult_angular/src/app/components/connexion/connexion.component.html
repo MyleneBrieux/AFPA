@@ -1,12 +1,66 @@
 <h3 id="connexion">CONNEXION</h3>
 
-<form id="form-connexion" action="">
-  <input type="text" name="email" placeholder="Adresse email" class="form-control" id="input-email" pattern="[0-9a-z.-_]{2,}@[0-9a-z]{2,}.[a-z]{2,3}$" title="xx@xx.xx" required>
-  <input type="password" name="mdp" placeholder="Mot de passe" class="form-control" id="input-mdp" required>
-  <input type="submit" value="Valider" class="btn btn-info">
+<div class="form-group" id="select-profil">
+  <select class="form-control" id="profil-user" (change)="getProfilUser($event)">
+    <option disabled selected>Vous êtes un...</option>
+    <option value="patient">Patient</option>
+    <option value="specialiste">Spécialiste</option>
+  </select>
+</div>
+
+<form [hidden]="!getProfil"
+      id="form-connexion"
+      name="form-connexion"
+      (ngSubmit)="connexion()"
+>
+
+  <input [(ngModel)]="email"
+         type="email"
+         name="email"
+         placeholder="Adresse email"
+         class="form-control"
+         id="input-email"
+         pattern="[0-9a-z.-_]{2,}@[0-9a-z]{2,}.[a-z]{2,3}$"
+         title="Format : xx@xx.xx"
+         ngModel required
+         #inputEmail="ngModel"
+  >
+  <span class="help-block text-danger"
+    *ngIf="!inputEmail.valid && inputEmail.touched">Vous devez renseigner votre adresse email.
+  </span>
+
+  <input [(ngModel)]="password"
+         type="password"
+         name="mdp"
+         placeholder="Mot de passe"
+         class="form-control"
+         id="input-mdp"
+         pattern="(?=^.{8,}$)(?=.*\d)(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$"
+         title="8 caractères minimum dont 1 majuscule, 1 minuscule et 1 chiffre"
+         ngModel required
+         #inputPassword="ngModel"
+  >
+  <span class="help-block text-danger"
+    *ngIf="!inputPassword.valid && inputPassword.touched">Le mot de passe est obligatoire.
+  </span>
+
+  <button class="btn btn-info"
+          id="btn-valider"
+          type="submit"
+          >Valider
+  </button>
+
 </form>
 
 <p  id="sinscrire">
-  <a routerLink="/inscription" id="lien-inscription">S'inscrire</a>
+  <a routerLink="/inscription"
+     id="lien-inscription">
+      S'inscrire
+  </a>
 </p>
 
+<ngx-spinner bdColor="rgba(51, 51, 51, 0.8)"
+             size="default"
+             type="ball-spin-clockwise">
+  <p style="color: white">Chargement en cours, veuillez patienter.</p>
+</ngx-spinner>

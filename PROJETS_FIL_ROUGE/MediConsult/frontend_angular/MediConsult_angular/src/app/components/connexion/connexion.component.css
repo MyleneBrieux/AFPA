@@ -5,20 +5,31 @@
   margin-bottom:2%;
 }
 
-#form-connexion {
+#form-connexion, #select-profil {
   text-align:center;
   margin-left:35%;
   width:30%;
 }
 
+#profil-user {
+  text-align:center;
+  margin-bottom:2%;
+}
+
+input.ng-invalid.ng-touched {
+  border : 1px solid red;
+}
+
 #input-email {
   text-align:center;
-  margin-bottom:6%;
 }
 
 #input-mdp {
   text-align:center;
-  margin-bottom:8.25%;
+}
+
+#btn-valider {
+  margin-top:4%;
 }
 
 #sinscrire {
